@@ -27,6 +27,14 @@ body, html{
     justify-content: center;
 }
 
+h1{
+    font-size: 70px;
+    color: burlywood;
+    text-decoration: underline;
+    margin: 0;
+    margin-right: 5px;
+}
+
 header{
     background-color: var(--fondo);
     
@@ -64,8 +72,10 @@ a i{
 
 .btn-header:hover{
     opacity: 0.7;
-    letter-spacing: 1px;
     padding: 18px 30px;
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.5));
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
 }
 
 /* redes */
@@ -95,29 +105,18 @@ a i{
 }
 
 .redes:hover{
-    width: 55px;
+    transform: translateX(-15px);
     opacity: 0.6;
 }
 
-/* section */
+/* section  MAIN */
 
 section{
     background-color: white;
 }
 
-h1{
-    font-size: 70px;
-    color: burlywood;
-    text-decoration: underline;
-    margin: 0;
-    margin-right: 5px;
-}
-
-h2{
-    font-size: 40px;
-    color: rgb(224, 198, 157);
-    text-align: center;
-    text-transform:uppercase;
+.info{
+    display: flex;
 }
 
 .links a{
@@ -131,34 +130,51 @@ h2{
     text-align: justify;
 }
 
+/* páginas noticias */
+
+.encabezado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fotomain{
+    margin-left: 20px;
+    border-radius: 5%;
+    height: 300px;
+    width: 350px;
+}
+
+h2{
+    font-size: 40px;
+    color: rgb(224, 198, 157);
+    text-align: center;
+    text-transform:uppercase;
+}
+
+.contenedor-noticia{
+    width: 850px;
+    margin-left: 110px;
+}
+
 .subtitulo{
     font-size: 25px;
     color: rgb(94, 94, 94);
     text-transform: uppercase;
-    margin-left: 110px;
 }
 
 .final{
     margin-bottom: 80px;
 }
 
-.fotomain{
-    border-radius: 5%;
-    height: 300px;
-    width: 350px;
-    margin: 20px 20px 20px 450px;
-}
-
 .subpage{
     height: 400px;
     width: 450px;
-    margin: 20px 20px 20px 525px;
     border-radius: 5%;
     border: 1.5px solid black;
 }
 
 .descripcion, .descripcionPage, .fecha, .fecha2{
-    position: absolute;
     width: 420px;
     text-align: justify;
     color: rgb(170, 170, 170);
@@ -166,7 +182,6 @@ h2{
 }
 
 .descripcionPage{
-    position: relative;
     width: auto;
     text-align: center;
     margin: 50px;
@@ -182,8 +197,6 @@ h2{
 .noticia{
     color: #00000080;
     font-size: 25px;
-    width: 850px;
-    margin-left: 110px;
     line-height: 35px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -194,7 +207,6 @@ h2{
 }
 
 .fecha{
-    position: relative;
     text-align: end;
 }
 
@@ -204,14 +216,17 @@ h2{
     width: 100%;
     border: none;
 }
+
 .divisionb{
     background-color: var(--gray);
     width: 100%;
 }
+
 .coments{
     display: flex;
     margin-bottom: 50px;
     flex-wrap: wrap;
+    align-items: baseline;
 }
 
 .comentarios{
@@ -228,9 +243,9 @@ h2{
     width: 250px;
     flex-direction: row;
     justify-content: space-around;
-    margin: 50px;
     border: none;
     background-color: var(--gray);
+    margin: 50px;
     border-radius: 5px;
     align-items: center;
     font-size: 1rem;
