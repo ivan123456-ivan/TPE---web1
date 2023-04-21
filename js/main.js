@@ -1,6 +1,6 @@
 "use strict";
 
-let btn1 = document.getElementsByClassName("btn1")
+/*let btn1 = document.getElementsByClassName("btn1")
 let btn2 = document.getElementsByClassName("btn2")
 let btn3 = document.getElementsByClassName("btn3")
 let btn4 = document.getElementsByClassName("btn4")
@@ -31,4 +31,4 @@ $(btn4).mouseenter(function () {
 });
 $(btn4).mouseleave(function () { 
     $(btn4).removeClass("animate__jello");
-});
+});*/
