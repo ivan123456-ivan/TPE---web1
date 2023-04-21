@@ -2,6 +2,7 @@
 /*icons ↥ */
 :root{
     --fondo:rgb(240, 248, 255);
+    --colorTitulo: rgb(222, 184, 135);
     --celeste: rgb(157, 195, 239);
     --gray: rgba(212, 212, 212, 0.395);
 }
@@ -14,10 +15,6 @@ body, html{
     width: 100%;
 }
 
-/*elementos flexbox*/
-.info, .coments, .encabezado, .nav, .logo{
-    display: flex;
-}
 
 *{
     box-sizing: border-box;
@@ -25,201 +22,206 @@ body, html{
     transition: all 0.5s;
 }
 
-/*header*/
+/*elementos flexbox*/
+.info, .coments, .encabezado, .nav, .logo, header, nav{
+    display: flex;
+}
+.container-redes{
+    display: grid;
+}
 
-.logo{
+
+nav{
     justify-content: center;
 }
+.nav, .logo, .info{
+    justify-content: space-evenly;
+}
+.inputs{
+    justify-content: space-around;
+}
+.nav, .inputs{
+    flex-direction: row;
+}
+.encabezado, #enviar, header{
+    flex-direction: column;
+}
+.inputs, header{
+    align-items: center;
+}
+/*fondos, decoraciones y colores*/
 
 h1{
-    font-size: 70px;
-    color: burlywood;
-    text-decoration: underline;
-    margin: 0;
-    margin-right: 5px;
+    color: var(--colorTitulo);
+}
+.btn-header, a i, .redes{
+    color: var(--fondo);
+}
+.descripcion, .descripcionPage, .fecha, .fecha2{
+    color: rgb(170, 170, 170);
 }
 
-header{
+h2{
+    color: rgb(224, 198, 157);
+}
+
+.subtitulo, .links a{
+    color: rgb(94, 94, 94);
+}
+.pieFoto, .noticia{
+    color: #00000080;
+}
+#enviar{
+    color: rgb(53, 53, 53);
+}
+.divisionb, .comentarios, .inputs{
+    background-color: var(--gray);
+}
+header, section, footer{
     background-color: var(--fondo);
     
 }
+.btn-header, .btn-header, .redes{
+    background-color: rgb(106, 168, 240);
+}
 
+.division, .divisionb{
+    background-color: rgb(225, 240, 254);
+}
+
+#enviar{
+    background-color: rgb(212, 212, 212);
+}
 header .eslogan{
-    font-size: 12px;
-    text-transform: uppercase;
     font-style: italic;
     font-weight: bold;
-    text-align: center;
+}
+.resaltado{
+    font-weight: bold;
+    color: var(--celeste);
+}
+.noticia{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1, .links a{
+    text-decoration: underline;
 }
 
-.nav{
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-.btn-header{ 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: rgb(106, 168, 240);
-    color: var(--fondo);
-    border: 0px;
-    cursor: pointer;
-    padding: 15px 30px;
-    letter-spacing: 0.5px;
-}
-
-a i{  
+a i{
     text-decoration: none;
-    color: white;
 }
 
-.btn-header:hover{
-    opacity: 0.7;
-    padding: 18px 30px;
-    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.5));
-    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-    transform: translateY(-2px);
+h2, header .eslogan, .subtitulo, .links a{
+    text-transform:uppercase;
 }
 
-/* redes */
+/*tamaños, margenes y posicionamiento*/
 
-.container-redes{
-    display: grid;
-    gap: 1px;
-    position: fixed;
-    right: 0px;
-    top: 30%;
-    list-style: none;
-    cursor: pointer;
+h1{
+    font-size: 70px;
+    margin: 0;
 }
-
-.redes{
-    background-color: rgb(106, 168, 240);
-    color: white;
-    height: 40px;
-    width: 40px;
-    padding: 10px 10px;
-    text-align: center;
-    border-radius: 5px;
+.final{
+    margin-bottom: 80px;
+}
+header .eslogan{
+    font-size: 12px;
 }
 
 .container-redes .redes i{
     font-size: 20px;
 }
-
-.redes:hover{
-    transform: translateX(-15px);
-    opacity: 0.6;
-}
-
-/* section  MAIN */
-
-section{
-    background-color: white;
-}
-
-
-
-.links a{
+.subtitulo, .links a, .noticia{
     font-size: 25px;
+}
+h2{
+    font-size: 40px;
+}
+footer{
+    font-size: 15px;
+}
+.redes, header .eslogan, h2, .descripcionPage, .pieFoto, footer{
+    text-align: center;
+}
+.fecha{
+    text-align: end;
+}
+.btn-header{ 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 0px;
+    padding: 15px 30px;
+    letter-spacing: 0.5px;
+}
+.container-redes{
+    gap: 1px;
+    position: fixed;
+    right: 0px;
+    top: 30%;
+    list-style: none;
+}
+.redes{
+    height: 40px;
+    width: 40px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+.links a, .btn-header, #enviar, .container-redes{
     cursor: pointer;
-    padding-left: 20px;
-    color: rgb(94, 94, 94);
-    text-transform: uppercase;
-    text-decoration: underline;
+}
+.division, .divisionb, nav{
+    width: 100%;
+}
+.nav{
+    width: 50%;
+}
+.logo{
+    width: 40%;
+}
+.links a{
     width: 10px;
-    text-align: justify;
 }
-
-/* páginas noticias */
-
-.encabezado{
-    flex-direction: column;
-    align-items: center;
-}
-
 .fotomain{
     margin-left: 20px;
     border-radius: 5%;
     height: 300px;
     width: 350px;
 }
-
-h2{
-    font-size: 40px;
-    color: rgb(224, 198, 157);
-    text-align: center;
-    text-transform:uppercase;
-}
-
-.contenedor-noticia{
-    width: 850px;
-    margin-left: 110px;
-}
-
-.subtitulo{
-    font-size: 25px;
-    color: rgb(94, 94, 94);
-    text-transform: uppercase;
-}
-
-.final{
-    margin-bottom: 80px;
-}
-
 .subpage{
     height: 400px;
     width: 450px;
     border-radius: 5%;
     border: 1.5px solid black;
 }
-
-.descripcion, .descripcionPage, .fecha, .fecha2{
-    width: 420px;
-    text-align: justify;
-    color: rgb(170, 170, 170);
-    padding-left: 20px;
+.contenedor-noticia{
+    width: 850px;
+    margin-left: 110px;
 }
 
+.descripcion, .descripcionPage, .fecha, .fecha2, .links a{
+    text-align: justify;
+    padding-left: 20px;
+}
+.descripcion, .descripcionPage, .fecha, .fecha2{
+    width: 420px;
+}
 .descripcionPage{
     width: auto;
-    text-align: center;
     margin: 50px;
 }
 
 .pieFoto{
-    text-align: center;
     font-size: small;
-    color: #00000080;
     margin: 20px;
 }
-
 .noticia{
-    color: #00000080;
-    font-size: 25px;
     line-height: 35px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
-.resaltado{
-    font-weight: bold;
-    color: var(--celeste);
-}
-
-.fecha{
-    text-align: end;
-}
-
-.division, .divisionb{
-    background-color: rgb(225, 240, 254);
-    height: 2px;
-    width: 100%;
-    border: none;
-}
-
 .divisionb{
-    background-color: var(--gray);
-    width: 100%;
+    height: 2px;
+}
+.division, .divisionb, .inputs, .comentarios{
+    border: none;
 }
 
 .coments{
@@ -227,10 +229,7 @@ h2{
     flex-wrap: wrap;
     align-items: baseline;
 }
-
 .comentarios{
-    border: none;
-    background-color: var(--gray);
     margin-left: 110px;
     border-radius: 5px;
     max-height: 250px;
@@ -240,47 +239,41 @@ h2{
 .inputs{
     height: 40px;
     width: 250px;
-    flex-direction: row;
-    justify-content: space-around;
-    border: none;
-    background-color: var(--gray);
     margin: 50px;
     border-radius: 5px;
-    align-items: center;
     font-size: 1rem;
     padding: 0.5rem 1rem;
 }
-
 #enviar{
-    flex-direction: column;
     margin-left: 110px;
     height: 30px;
     width: 200px;
-    cursor: pointer;
-    background-color: rgb(212, 212, 212);
-    color: rgb(53, 53, 53);
 }
 
+footer h4{
+    padding: 30px;
+    margin: 0%;
+}
+
+/*Animacionesy efectos*/
+
+.btn-header:hover{
+    opacity: 0.7;
+    padding: 18px 30px;
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.5));
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+.redes:hover{
+    transform: translateX(-15px);
+    opacity: 0.6;
+}
 #enviar:hover{
     outline: var(--celeste) 2px solid;
     letter-spacing: 1px;
     background-color: aliceblue;
     color: black;
 }
-
 .comentarios:focus , .inputs:focus{
     outline: var(--celeste) 2px solid;
-}
-
-/* footer */
-
-footer{
-    text-align: center;
-    font-size: 15px;
-    background-color: var(--fondo)
-}
-
-footer h4{
-    padding: 30px;
-    margin: 0%;
 }
