@@ -20,10 +20,12 @@ body, html{
     box-sizing: border-box;
     text-decoration: none;
     transition: all 0.5s;
+    padding: 0;
+    margin: 0;
 }
 
 /*elementos flexbox*/
-.info, .coments, .encabezado, .nav, .logo, header, nav{
+.info, .coments, .encabezado, .nav, .logo, header, nav, .articulo, .about, .about-container, .about{
     display: flex;
 }
 .container-redes{
@@ -31,22 +33,20 @@ body, html{
 }
 
 
-nav{
+nav, .about-container{
     justify-content: center;
 }
-.nav, .logo, .info{
-    justify-content: space-evenly;
-}
-.inputs{
+
+.inputs, .articulo, .nav, .logo, .info, .about{
     justify-content: space-around;
 }
 .nav, .inputs{
     flex-direction: row;
 }
-.encabezado, #enviar, header{
+.encabezado, #enviar, header, .articulo, .about{
     flex-direction: column;
 }
-.inputs, header{
+.inputs, header, .articulo, .about, .encabezado{
     align-items: center;
 }
 /*fondos, decoraciones y colores*/
@@ -114,9 +114,29 @@ a i{
 h2, header .eslogan, .subtitulo, .links a{
     text-transform:uppercase;
 }
+.nav {
+    list-style: none;
+}
 
 /*tamaños, margenes y posicionamiento*/
-
+.division, .divisionb, nav, .articulo, .info, .logo, .nav, .about-container{
+    width: 100%;
+}
+.nav, .about{
+    width: 50%;
+}
+.logo{
+    width: 40%;
+}
+.links a{
+    width: 10px;
+}
+.descripcion, .descripcionPage{
+    width: 420px;
+}
+.about-container{
+    min-height: 400px;
+}
 h1{
     font-size: 70px;
     margin: 0;
@@ -124,14 +144,17 @@ h1{
 .final{
     margin-bottom: 80px;
 }
+
 header .eslogan{
     font-size: 12px;
 }
-
+.about-text{
+    font-size: 18px;
+}
 .container-redes .redes i{
     font-size: 20px;
 }
-.subtitulo, .links a, .noticia{
+.subtitulo, .links a, .noticia, .about-title{
     font-size: 25px;
 }
 h2{
@@ -169,18 +192,7 @@ footer{
 .links a, .btn-header, #enviar, .container-redes{
     cursor: pointer;
 }
-.division, .divisionb, nav{
-    width: 100%;
-}
-.nav{
-    width: 50%;
-}
-.logo{
-    width: 40%;
-}
-.links a{
-    width: 10px;
-}
+
 .fotomain{
     margin-left: 20px;
     border-radius: 5%;
@@ -202,8 +214,8 @@ footer{
     text-align: justify;
     padding-left: 20px;
 }
-.descripcion, .descripcionPage, .fecha, .fecha2{
-    width: 420px;
+.noticia{
+    line-height: 35px;
 }
 .descripcionPage{
     width: auto;
@@ -214,9 +226,7 @@ footer{
     font-size: small;
     margin: 20px;
 }
-.noticia{
-    line-height: 35px;
-}
+
 .divisionb{
     height: 2px;
 }
