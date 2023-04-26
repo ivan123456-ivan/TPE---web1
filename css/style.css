@@ -200,7 +200,7 @@ footer{
     width: 350px;
 }
 .subpage{
-    height: 400px;
+    height: 350px;
     width: 450px;
     border-radius: 5%;
     border: 1.5px solid black;
@@ -244,6 +244,7 @@ footer{
     border-radius: 5px;
     max-height: 250px;
     max-width: 500px;
+    min-width: 350px;
 }
 
 .inputs{
