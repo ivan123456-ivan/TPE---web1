@@ -57,8 +57,12 @@ h1{
 .btn-header, a i, .redes{
     color: var(--fondo);
 }
+.btn-header a{
+    color: white;
+}
 .descripcion, .descripcionPage, .fecha, .fecha2{
     color: rgb(170, 170, 170);
+    font-size: 20px;
 }
 
 h2{
@@ -74,19 +78,22 @@ h2{
 #enviar{
     color: rgb(53, 53, 53);
 }
-.divisionb, .comentarios, .inputs{
+.division, .comentarios, .inputs{
     background-color: var(--gray);
 }
-header, section, footer{
+header, footer{
     background-color: var(--fondo);
     
 }
+header{
+    position: fixed;
+    width: 100%;
+}
+.separador{
+    margin-top: 140px;
+}
 .btn-header, .btn-header, .redes{
     background-color: rgb(106, 168, 240);
-}
-
-.division, .divisionb{
-    background-color: rgb(225, 240, 254);
 }
 
 #enviar{
@@ -107,8 +114,9 @@ h1, .links a{
     text-decoration: underline;
 }
 
-a i{
+a {
     text-decoration: none;
+    color: rgb(110, 95, 160);
 }
 
 h2, header .eslogan, .subtitulo, .links a{
@@ -119,7 +127,7 @@ h2, header .eslogan, .subtitulo, .links a{
 }
 
 /*tamaños, margenes y posicionamiento*/
-.division, .divisionb, nav, .articulo, .info, .logo, .nav, .about-container{
+.division, nav, .articulo, .info, .logo, .nav, .about-container{
     width: 100%;
 }
 .nav, .about{
@@ -227,10 +235,17 @@ footer{
     margin: 20px;
 }
 
-.divisionb{
+iframe{
+    width:560px;
+    height: 315px;
+    border-radius: 5px;
+    margin-block: 50px;
+}
+
+.division{
     height: 2px;
 }
-.division, .divisionb, .inputs, .comentarios{
+.division, .inputs, .comentarios{
     border: none;
 }
 
@@ -266,7 +281,7 @@ footer h4{
     margin: 0%;
 }
 
-/*Animacionesy efectos*/
+/*Animaciones y efectos*/
 
 .btn-header:hover{
     opacity: 0.7;
