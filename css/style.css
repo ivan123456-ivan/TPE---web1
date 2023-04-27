@@ -349,38 +349,38 @@ table{
 
 .item--1{
     margin-left: 10px;
-    background: linear-gradient(to right, #443e3f, #b2adae);
+    background: linear-gradient(to right bottom, #443e3f, #b2adae);
 }
 
 .item--2{
-    background: linear-gradient(to right, #d2ae1c, #fff7df);
+    background: linear-gradient(to right bottom, #d2ae1c, #fff8e4);
 }
 
 .item--3{
-    background: linear-gradient(to right, #1cd21c, #caffca);
+    background: linear-gradient(to right bottom, #1cd21c, #d4ffd4);
 }
 
 .item--4{
     margin-right: 55px;
-    background: linear-gradient(to right, #ae1cd2, #f3c3ff);
+    background: linear-gradient(to right bottom, #ae1cd2, #f5ccff);
 }
 
 .item--5{
     margin-left: 10px;
-    background: linear-gradient(to right, #d21c31, #ffbcc4);
+    background: linear-gradient(to right bottom, #d21c31, #ffc4cb);
 }
 
 .item--6{
-    background: linear-gradient(to right, #1c65d2, #cde1ff);
+    background: linear-gradient(to right bottom, #1c65d2, #d6e7ff);
 }
 
 .item--7{
-    background: linear-gradient(to right, #d21c62, #ffabcb);
+    background: linear-gradient(to right bottom, #d21c62, #ffb9d4);
 }
 
 .item--8{
     margin-right: 55px;
-    background: linear-gradient(to right, #1cd292, #beffe8);
+    background: linear-gradient(to right bottom, #1cd292, #cdffed);
 }
 
 a .text{
