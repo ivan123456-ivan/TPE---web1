@@ -162,7 +162,7 @@ header .eslogan{
 .container-redes .redes i{
     font-size: 20px;
 }
-.subtitulo, .links a, .noticia, .about-title{
+.subtitulo, .links a, .noticia, .about-title, .icon{
     font-size: 25px;
 }
 h2{
@@ -281,6 +281,30 @@ footer h4{
     margin: 0%;
 }
 
+.card {
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr) ;
+    gap: 20px;
+    align-items: center;
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-bottom: 200px;/*MARGIN PARA EL FOOTER*/
+}
+
+.card .item {
+    height: 125px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+
 /*Animaciones y efectos*/
 
 .btn-header:hover{
@@ -302,4 +326,56 @@ footer h4{
 }
 .comentarios:focus , .inputs:focus{
     outline: var(--celeste) 2px solid;
+}
+
+.item:hover {
+    transform: translateY(5px);
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.item--1{
+    margin-left: 10px;
+    background: linear-gradient(to right, #443e3f, #b2adae);
+}
+
+.item--2{
+    background: linear-gradient(to right, #d2ae1c, #fff7df);
+}
+
+.item--3{
+    background: linear-gradient(to right, #1cd21c, #caffca);
+}
+
+.item--4{
+    margin-right: 55px;
+    background: linear-gradient(to right, #ae1cd2, #f3c3ff);
+}
+
+.item--5{
+    margin-left: 10px;
+    background: linear-gradient(to right, #d21c31, #ffbcc4);
+}
+
+.item--6{
+    background: linear-gradient(to right, #1c65d2, #cde1ff);
+}
+
+.item--7{
+    background: linear-gradient(to right, #d21c62, #ffabcb);
+}
+
+.item--8{
+    margin-right: 55px;
+    background: linear-gradient(to right, #1cd292, #beffe8);
+}
+
+a .text{
+    margin: 10px;
+    color: white;
+}
+
+.icon:hover{
+    transform: translateY(-5px);
 }
