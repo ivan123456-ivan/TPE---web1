@@ -74,10 +74,7 @@ h2{
 .pieFoto, .noticia{
     color: #00000080;
 }
-#enviar{
-    color: rgb(53, 53, 53);
-}
-.division, .comentarios, .inputs{
+.division, .comentarios, .inputs, th, .gray{
     background-color: var(--gray);
 }
 header, footer{
@@ -96,6 +93,7 @@ header{
 }
 
 #enviar{
+    color: rgb(53, 53, 53);
     background-color: rgb(212, 212, 212);
 }
 header .eslogan{
@@ -301,6 +299,21 @@ footer h4{
     align-items: center;
     justify-content: center;
     padding: 10px;
+}
+
+table, th, td{
+    text-align: center;
+   font-size: 20px;
+}
+
+td{
+    color: #797475;
+}
+
+table{
+    width: 100%;
+    margin: 20px;
+    border-collapse: collapse;
 }
 
 
