@@ -25,20 +25,19 @@ body, html{
 }
 
 /*elementos flexbox*/
-.info, .coments, .encabezado, .nav, .logo, header, nav, .articulo, .about, .about-container, .about{
+.info, .coments, .encabezado, .nav, .logo, header, .articulo, .about, .about-container, .about{
     display: flex;
 }
 .container-redes{
     display: grid;
 }
 
-
-nav, .about-container{
+.about-container{
     justify-content: center;
 }
 
 .inputs, .articulo, .nav, .logo, .info, .about{
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .nav, .inputs{
     flex-direction: row;
@@ -130,7 +129,7 @@ h2, header .eslogan, .subtitulo, .links a{
 .division, nav, .articulo, .info, .logo, .nav, .about-container{
     width: 100%;
 }
-.nav, .about{
+.about{
     width: 50%;
 }
 .logo{
