@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario + categorias</title>
-      <!-- CSS -->
-      <link rel="stylesheet" href="css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <h1>El Diario +</h1>
-            <img src="./img/escarapela.png" alt="escarapela">
-        </div>
+    <div class="main">
         <div>
-            <p class="eslogan">tu portal de noticias.</p>
+            <header>
+                <div class="logo">
+                    <h1>El Diario +</h1>
+                    <img src="./img/escarapela.png" alt="escarapela">
+                </div>
+                <div>
+                    <p class="eslogan">tu portal de noticias.</p>
+                </div>
+                <nav>
+                    <ul class="nav">
+                        <li type="menu" class="btn-header"><a href="index.html" target="_blank"
+                                rel="noopener noreferrer">Home<i class="bi bi-house"> </i></a></li>
+                        <li type="menu" class="btn-header"><a href="ultimas-noticias.html" target="_blank"
+                                rel="noopener noreferrer">Ultimas
+                                Noticias</a><i class="bi bi-exclamation-diamond"> </i></li>
+                        <li type="menu" class="btn-header"><a href="categorias.html" target="_blank"
+                                rel="noopener noreferrer">Categorías</a><i class="bi bi-bookmark"> </i></li>
+                        <li type="menu" class="btn-header"><a href="#" target="_blank"
+                                rel="noopener noreferrer">Contacto</a><i class="bi bi-telephone"> </i></li>
+                    </ul>
+                </nav>
+            </header>
         </div>
-        <nav>
-            <ul class="nav">
-                <li type="menu" class="btn-header"><a href="/index.html" target="_blank" rel="noopener noreferrer">Home<i
-                            class="bi bi-house"> </i></a></li>
-                <li type="menu" class="btn-header"><a href="/ultimas-noticias.html" target="_blank" rel="noopener noreferrer">Ultimas
-                        Noticias</a><i class="bi bi-exclamation-diamond"> </i></li>
-                <li type="menu" class="btn-header"><a href="/categorias.html" target="_blank"
-                        rel="noopener noreferrer">Categorías</a><i class="bi bi-bookmark"> </i></li>
-                <li type="menu" class="btn-header"><a href="#" target="_blank" rel="noopener noreferrer">Contacto</a><i
-                        class="bi bi-telephone"> </i></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="container-contact">
+            <form class="contact-form" action="" method="get">
+                <label for="nombre">Nombre y Apellido</label>
+                <input id="nombre" class="contact-input" type="text">
+                <label for="email">Email</label>
+                <input id="email" class="contact-input" type="email">
+                <label for="mensaje"></label>
+                <textarea class="mensaje-contacto" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+                <button class="btn-enviar" type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
     <ul class="container-redes">
         <li class="redes"><i class="bi bi-twitch"></i></li>
         <li class="redes"><i class="bi bi-twitter"></i></li>
@@ -40,11 +58,11 @@
     </ul>
 
 
-    
     <footer>
         <div class="division"></div>
         <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
     </footer>
 
 </body>
+
 </html>

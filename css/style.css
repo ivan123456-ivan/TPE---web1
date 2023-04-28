@@ -25,27 +25,30 @@ body, html{
 }
 
 /*elementos flexbox*/
-.info, .coments, .encabezado, .nav, .logo, header, .articulo, .about, .about-container, .about{
+.info, .coments, .encabezado, .nav, .logo, header, .articulo, .about, .about-container, .about, .container-contact, .main, .contact-form{
     display: flex;
 }
 .container-redes{
     display: grid;
 }
 
-.about-container{
+.about-container, .container-contact{
     justify-content: center;
 }
 
-.inputs, .articulo, .nav, .logo, .info, .about{
+.inputs, .articulo, .nav, .logo, .info, .about, .contact-form{
     justify-content: space-evenly;
+}
+.main{
+    justify-content: space-between;
 }
 .nav, .inputs{
     flex-direction: row;
 }
-.encabezado, #enviar, header, .articulo, .about{
+.encabezado, #enviar, header, .articulo, .about, .main, .contact-form{
     flex-direction: column;
 }
-.inputs, header, .articulo, .about, .encabezado{
+.inputs, header, .articulo, .about, .encabezado, .container-contact, .contact-form{
     align-items: center;
 }
 /*fondos, decoraciones y colores*/
@@ -81,10 +84,7 @@ header, footer{
     background-color: var(--fondo);
     
 }
-header{
-    position: fixed;
-    width: 100%;
-}
+
 .separador{
     margin-top: 140px;
 }
@@ -124,20 +124,43 @@ h2, header .eslogan, .subtitulo, .links a{
 }
 
 /*tamaños, margenes y posicionamiento*/
-.division, nav, .articulo, .info, .logo, .nav, .about-container{
+.division, nav, .articulo, .info, .logo, .nav, .about-container, .container-contact, header, .main{
     width: 100%;
 }
-.about{
+.about, .contact-form, .mensaje-contacto{
     width: 50%;
+}
+header, .container-redes{
+    position: fixed;
 }
 .logo{
     width: 40%;
+}
+.btn-enviar{
+    width: 20%;
 }
 .links a{
     width: 10px;
 }
 .descripcion, .descripcionPage{
     width: 420px;
+}
+.main{
+    min-height: 700px;
+}
+.contact-form{
+    height: 400px;
+}
+.main{
+    height: 100%;
+}
+header{
+    height: 30%;
+    min-height: 153px;
+}
+.container-contact{
+    height: 70%;
+    min-height: 500px;
 }
 .about-container{
     min-height: 400px;
@@ -149,9 +172,14 @@ h1{
 .final{
     margin-bottom: 80px;
 }
-
+.btn-enviar{
+    padding: 10px;
+}
 header .eslogan{
     font-size: 12px;
+}
+.btn-enviar{
+    font-size: 16px;
 }
 .about-text{
     font-size: 18px;
@@ -168,7 +196,20 @@ h2{
 footer{
     font-size: 15px;
 }
-.redes, header .eslogan, h2, .descripcionPage, .pieFoto, footer{
+.contact-input{
+    width: 50%;
+    height: 32px;
+    border: 1px solid #0f0f0f;
+    border-radius: 10px;
+}
+.mensaje-contacto{
+    resize: none;
+}
+.mensaje-contacto{
+    border-radius: 10px;
+}
+
+.redes, header .eslogan, h2, .descripcionPage, .pieFoto, footer, .contact-form{
     text-align: center;
 }
 .fecha{
@@ -183,7 +224,6 @@ footer{
 }
 .container-redes{
     gap: 1px;
-    position: fixed;
     right: 0px;
     top: 30%;
     list-style: none;
