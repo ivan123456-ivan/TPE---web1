@@ -130,9 +130,14 @@ h2, header .eslogan, .subtitulo, .links a{
 .about, .contact-form, .mensaje-contacto{
     width: 50%;
 }
-header, .container-redes{
+.container-redes{
     position: fixed;
 }
+header{
+    position: sticky;
+    top: 0;
+}
+
 .logo{
     width: 40%;
 }
@@ -146,7 +151,7 @@ header, .container-redes{
     width: 420px;
 }
 .main{
-    min-height: 700px;
+    min-height: 100vh;
 }
 .contact-form{
     height: 400px;
