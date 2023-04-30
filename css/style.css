@@ -62,9 +62,13 @@ h1{
 .btn-header a{
     color: white;
 }
-.descripcion, .descripcionPage, .fecha, .fecha2{
+.descripcion, .descripcion-page, .fecha, .fecha2{
     color: rgb(170, 170, 170);
     font-size: 20px;
+}
+
+.info{
+    margin-top: 15px;
 }
 
 h2{
@@ -74,7 +78,7 @@ h2{
 .subtitulo, .links a{
     color: rgb(94, 94, 94);
 }
-.pieFoto, .noticia{
+.pie-foto, .noticia{
     color: #00000080;
 }
 .division, .comentarios, .inputs, th, .gray{
@@ -83,10 +87,6 @@ h2{
 header, footer{
     background-color: var(--fondo);
     
-}
-
-.separador{
-    margin-top: 140px;
 }
 .btn-header, .btn-header, .redes{
     background-color: rgb(106, 168, 240);
@@ -147,10 +147,10 @@ header{
 .links a{
     width: 10px;
 }
-.descripcion, .descripcionPage{
+.descripcion, .descripcion-page{
     width: 420px;
 }
-.main{
+.main-contacto-home{
     min-height: 100vh;
 }
 .contact-form{
@@ -161,7 +161,7 @@ header{
 }
 header{
     height: 30%;
-    min-height: 153px;
+    min-height: 140px;
 }
 .container-contact{
     height: 70%;
@@ -214,7 +214,7 @@ footer{
     border-radius: 10px;
 }
 
-.redes, header .eslogan, h2, .descripcionPage, .pieFoto, footer, .contact-form{
+.redes, header .eslogan, h2, .descripcion-page, .pie-foto, footer, .contact-form{
     text-align: center;
 }
 .fecha{
@@ -260,19 +260,19 @@ footer{
     margin-left: 110px;
 }
 
-.descripcion, .descripcionPage, .fecha, .fecha2, .links a{
+.descripcion, .descripcion-page, .fecha, .fecha2, .links a{
     text-align: justify;
     padding-left: 20px;
 }
 .noticia{
     line-height: 35px;
 }
-.descripcionPage{
+.descripcion-page{
     width: auto;
     margin: 50px;
 }
 
-.pieFoto{
+.pie-foto{
     font-size: small;
     margin: 20px;
 }
@@ -299,9 +299,7 @@ iframe{
 .comentarios{
     margin-left: 110px;
     border-radius: 5px;
-    max-height: 250px;
-    max-width: 500px;
-    min-width: 350px;
+    resize: none;
 }
 
 .inputs{
