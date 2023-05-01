@@ -436,3 +436,38 @@ a .text{
 .icon:hover{
     transform: translateY(-5px);
 }
+
+
+.escarapela-container{
+    width: 77px;
+    height: 86px;
+}
+
+.escarapela-capa-1, .escarapela-capa-3{
+    background-color: #71ABDE;
+    border-radius: 100%;
+
+    
+}
+
+.escarapela-capa-1{
+    width: 77px;
+    display: flex;
+    height: 86px;
+    align-items: center;
+    justify-content: center;
+}
+.escarapela-capa-2{
+    background-color: #EFF7FF;
+    border-radius: 100%;
+    width: 53px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.escarapela-capa-3{
+    width: 25px;
+    height: 25px;
+}
