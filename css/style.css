@@ -53,6 +53,14 @@ body, html{
 }
 /*fondos, decoraciones y colores*/
 
+.verif-ok{
+    color: #1cd21c;
+}
+
+.verif-fail{
+    color: #d21c31;
+}
+
 h1{
     color: var(--colorTitulo);
 }
@@ -468,4 +476,99 @@ a .text{
 .escarapela-capa-3{
     width: 25px;
     height: 25px;
+}
+
+/* CSS DE CAPTCHA, lo dejo así y después lo ordenamos si te gusta*/
+
+.form {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: .4s ease-in-out;
+}
+  
+.form:hover {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    scale: 0.99;
+}
+  
+.heading {
+    text-align: center;
+    color: rgb(47, 47, 47);
+    top: 3em;
+    font-weight: bold;
+}
+  
+.check {
+    align-self: center;
+    margin: 1rem;
+    font-size: 40px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+}
+
+#container-captcha{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.ocultar{
+    display: none !important;
+}
+  
+.input {
+    width: 4.5em;
+    height: 2.5em;
+    margin: 1em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(235, 235, 235);
+    box-shadow: inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff;
+    padding-left: 15px;
+}
+  
+.input:hover {
+    box-shadow: inset 0px 0px 0px #d1d1d1, inset 0px 0px 0px #ffffff;
+    background-color: lightgrey;
+}
+  
+.input:focus {
+    box-shadow: inset 0px 0px 0px #d1d1d1, inset 0px 0px 0px #ffffff;
+    background-color: lightgrey;
+}
+  
+.buttons{
+    display: flex;
+}
+
+.btn1, .btn2 {
+    margin: 10px;
+    cursor: pointer;
+    width: 17em;
+    height: 3em;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 1px 1px 3px #b5b5b5, -1px -1px 3px #ffffff;
+}
+  
+.btn1:hover {
+    box-shadow: inset 3px 3px 6px #b5b5b5, inset -3px -3px 6px #ffffff;
+}
+
+
+.btn2:hover {
+    box-shadow: inset 3px 3px 6px #b5b5b5, inset -3px -3px 6px #ffffff;
+}
+
+#captcha{
+    cursor: pointer;
 }

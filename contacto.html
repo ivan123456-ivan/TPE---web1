@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="body">
     <div class="main-contacto-home">
         <header>
             <div class="logo">
@@ -42,7 +42,32 @@
                 </ul>
             </nav>
         </header>
-        <div class="container-contact">
+        <ul class="container-redes">
+            <li class="redes"><i class="bi bi-twitch"></i></li>
+            <li class="redes"><i class="bi bi-twitter"></i></li>
+            <li class="redes"><i class="bi bi-facebook"></i></li>
+            <li class="redes"><i class="bi bi-messenger"></i></li>
+            <li class="redes"><a href="https://api.whatsapp.com/send?phone=2494696975" target="_blank"><i
+                        class="bi bi-whatsapp"></i></a></li>
+        </ul>
+
+        <form  action="">
+            <div id="container-captcha">
+                <div class="form">
+                    <i class="check bi bi-shield-lock-fill" id="icon-verif"></i>
+                    <p class="heading">Ingrese la clave aleatoria: <span id="aleatorio"></span></p>
+                    <div class="box">
+                        <input class="input" type="text" id="numero-usuario" maxlength="4" autocomplete="off">
+                    </div>
+                    <div class="buttons">
+                        <button type="button" class="btn1" id="submit">Comprobar</button>
+                        <button type="button" class="btn2" id="back">Volver</button>
+                    </div>
+                </div>
+            </div>
+          </form>
+    
+        <div class="container-contact" id="contact">
             <form class="contact-form" action="" method="get">
                 <label for="nombre">Nombre y Apellido</label>
                 <input id="nombre" class="contact-input" type="text">
@@ -51,17 +76,10 @@
                 <label for="mensaje"></label>
                 <textarea class="mensaje-contacto" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
                 <button class="btn-enviar" type="submit">Enviar</button>
+                <a id="captcha">Ir al captcha</a>
             </form>
         </div>
     </div>
-    <ul class="container-redes">
-        <li class="redes"><i class="bi bi-twitch"></i></li>
-        <li class="redes"><i class="bi bi-twitter"></i></li>
-        <li class="redes"><i class="bi bi-facebook"></i></li>
-        <li class="redes"><i class="bi bi-messenger"></i></li>
-        <li class="redes"><a href="https://api.whatsapp.com/send?phone=2494696975" target="_blank"><i
-                    class="bi bi-whatsapp"></i></a></li>
-    </ul>
 
 
     <footer>
