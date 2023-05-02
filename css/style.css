@@ -48,7 +48,7 @@ body, html{
 .encabezado, #enviar, header, .articulo, .about, .main, .contact-form{
     flex-direction: column;
 }
-.inputs, header, .articulo, .about, .encabezado, .container-contact, .contact-form{
+.inputs, header, .articulo, .about, .encabezado, .container-contact, .contact-form, .form{
     align-items: center;
 }
 /*fondos, decoraciones y colores*/
