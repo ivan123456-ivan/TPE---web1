@@ -94,6 +94,7 @@ h2{
 }
 header, footer{
     background-color: var(--fondo);
+    z-index: 1;
     
 }
 .btn-header, .btn-header, .redes{
@@ -571,4 +572,57 @@ a .text{
 
 #captcha{
     cursor: pointer;
+}
+
+.candidatos{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+}
+
+.libertad-avanza, .cambiemos, .frente-todos, .neutro{
+    opacity: 0.9;
+    background-color:rgb(199, 67, 133);
+    width: 100%;
+    height: auto;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.neutro, .neutro .descripcion{
+    background-color: rgb(66, 68, 69);
+    width: 35%;
+    color: white;
+}
+
+.cambiemos, .bullrich, .manes{
+    background-color: rgb(243, 187, 32);
+    width: 80%;
+}
+
+.manes{
+    width: 40%;
+}
+
+.bullrich{
+    width: 70%;
+}
+
+.frente-todos, .massa, .kicillof{
+    background-color: rgb(66, 105, 158);
+    width: 70%;
+}
+
+.massa{
+    width: 65%;
+}
+
+.kicillof{
+    width: 60%;
+}
+
+.descripcion{
+    color: rgb(70, 69, 69);
+    font-size: x-large;
 }
