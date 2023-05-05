@@ -81,6 +81,10 @@ header, footer{
 
 /* main */
 
+tr:nth-child(even){
+    background-color: var(--gray);
+}
+
 .captcha-ok{
     color: #1cd21c;
 }
