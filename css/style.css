@@ -24,11 +24,17 @@ body, html{
     margin: 0;
 }
 
-/*elementos flexbox*/
+/* General */
+/* FlexBox */
 .info, .coments, .encabezado, .nav, .logo, header, .articulo, .about, .about-container, .about, .container-contact, .main, .contact-form{
     display: flex;
 }
-.container-redes{
+
+.division, nav, .articulo, .info, .logo, .about-container, .container-contact, header, .main{
+    width: 100%;
+}
+
+.container-redes, .card{
     display: grid;
 }
 
@@ -39,37 +45,55 @@ body, html{
 .inputs, .articulo, .nav, .logo, .info, .about, .contact-form{
     justify-content: space-evenly;
 }
+
 .main{
     justify-content: space-between;
 }
 .nav, .inputs{
     flex-direction: row;
 }
+
 .encabezado, #enviar, header, .articulo, .about, .main, .contact-form{
     flex-direction: column;
 }
+
 .inputs, header, .articulo, .about, .encabezado, .container-contact, .contact-form, .form{
     align-items: center;
 }
-/*fondos, decoraciones y colores*/
 
-.verif-ok{
-    color: #1cd21c;
-}
-
-.verif-fail{
-    color: #d21c31;
-}
-
+/* fondos, decoraciones y colores */
+/* header */
 h1{
     color: var(--colorTitulo);
 }
 .btn-header, a i, .redes{
     color: var(--fondo);
 }
+
 .btn-header a{
     color: white;
 }
+
+header, footer{
+    background-color: var(--fondo);
+    z-index: 1;
+}
+
+/* main */
+
+.captcha-ok{
+    color: #1cd21c;
+}
+
+.captcha-fail{
+    color: #d21c31;
+}
+
+.container-comentario{
+    height: 60vh;
+    flex-direction: column;
+}
+
 .descripcion, .descripcion-page, .fecha, .fecha2{
     color: rgb(170, 170, 170);
     font-size: 20px;
@@ -86,25 +110,25 @@ h2{
 .subtitulo, .links a{
     color: rgb(94, 94, 94);
 }
+
 .pie-foto, .noticia{
     color: #00000080;
 }
+
 .division, .comentarios, .inputs, th, .gray{
     background-color: var(--gray);
 }
-header, footer{
-    background-color: var(--fondo);
-    z-index: 1;
-    
-}
+
 .btn-header, .btn-header, .redes{
     background-color: rgb(106, 168, 240);
 }
 
-#enviar{
+.enviar{
     color: rgb(53, 53, 53);
+    cursor: pointer;
     background-color: rgb(212, 212, 212);
 }
+
 header .eslogan{
     font-style: italic;
     font-weight: bold;
@@ -132,16 +156,19 @@ h2, header .eslogan, .subtitulo, .links a{
     list-style: none;
 }
 
-/*tamaños, margenes y posicionamiento*/
-.division, nav, .articulo, .info, .logo, .nav, .about-container, .container-contact, header, .main{
-    width: 100%;
+.contact-form{
+    height: 100vh;
 }
+
 .about, .contact-form, .mensaje-contacto{
     width: 50%;
 }
 .container-redes{
     position: fixed;
 }
+
+/* header */
+
 header{
     position: sticky;
     top: 0;
@@ -150,6 +177,11 @@ header{
 .logo{
     width: 40%;
 }
+
+/* main */
+
+/* Footer */
+
 .btn-enviar{
     width: 20%;
 }
@@ -159,12 +191,10 @@ header{
 .descripcion, .descripcion-page{
     width: 420px;
 }
-.main-contacto-home{
+.main{
     min-height: 100vh;
 }
-.contact-form{
-    height: 400px;
-}
+
 .main{
     height: 100%;
 }
@@ -173,8 +203,8 @@ header{
     min-height: 140px;
 }
 .container-contact{
-    height: 70%;
-    min-height: 500px;
+    height: 100%;
+    min-height: 100vh;
 }
 .about-container{
     min-height: 400px;
@@ -301,10 +331,13 @@ iframe{
 }
 
 .coments{
-    margin-bottom: 50px;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
 }
+
 .comentarios{
     margin-left: 110px;
     border-radius: 5px;
@@ -314,13 +347,12 @@ iframe{
 .inputs{
     height: 40px;
     width: 250px;
-    margin: 50px;
     border-radius: 5px;
     font-size: 1rem;
     padding: 0.5rem 1rem;
 }
-#enviar{
-    margin-left: 110px;
+
+.enviar{
     height: 30px;
     width: 200px;
 }
@@ -332,7 +364,6 @@ footer h4{
 
 .card {
     color: white;
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr) ;
     gap: 20px;
@@ -382,7 +413,7 @@ table{
     transform: translateX(-15px);
     opacity: 0.6;
 }
-#enviar:hover{
+.enviar:hover{
     outline: var(--celeste) 2px solid;
     letter-spacing: 1px;
     background-color: aliceblue;
@@ -517,7 +548,6 @@ a .text{
 #container-captcha{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
 }
 
 .ocultar{

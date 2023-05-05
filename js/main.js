@@ -21,10 +21,10 @@ function crear_captcha() {
 
 function checking() {
     if (ramdon == input.value) {
-        icon.classList.remove("bi-shield-lock-fill", "bi-shield-fill-x", "verif-fail");
-        icon.classList.add("bi-shield-fill-check", "verif-ok");
+        icon.classList.remove("bi-shield-lock-fill", "bi-shield-fill-x", "captcha-fail");
+        icon.classList.add("bi-shield-fill-check", "captcha-ok");
     }else{
-        icon.classList.remove("bi-shield-lock-fill", "bi-shield-fill-check", "verif-ok");
-        icon.classList.add("bi-shield-fill-x", "verif-fail");
+        icon.classList.remove("bi-shield-lock-fill", "bi-shield-fill-check", "captcha-ok");
+        icon.classList.add("bi-shield-fill-x", "captcha-fail");
     }
 }
