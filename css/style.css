@@ -26,38 +26,44 @@ body, html{
 
 /* General */
 /* FlexBox */
-.info, .coments, .encabezado, .nav, .logo, header, .articulo, .about, .about-container, .about, .container-contact, .main, .contact-form{
+.info, .coments, .encabezado, .nav, .logo, header, .articulo, .about, .about-container, .about, .container-contact, .main, .contact-form, .section-category, .container-catalogo{
     display: flex;
 }
 
-.division, nav, .articulo, .info, .logo, .about-container, .container-contact, header, .main{
+.division, nav, .articulo, .info, .logo, .about-container, .container-contact, header, .main, .about{
     width: 100%;
+}
+.section-category, .container-catalogo{
+    width: 100vw;
+}
+.container-catalogo{
+    height: 70vh;
 }
 
 .container-redes, .card{
     display: grid;
 }
 
-.about-container, .container-contact{
+.container-contact{
     justify-content: center;
 }
 
-.inputs, .articulo, .nav, .logo, .info, .about, .contact-form{
+.inputs, .articulo, .nav, .logo, .info, .about, .contact-form, .container-catalogo{
     justify-content: space-evenly;
 }
 
-.main{
+.main, .about-container{
     justify-content: space-between;
 }
 .nav, .inputs{
     flex-direction: row;
 }
 
-.encabezado, #enviar, header, .articulo, .about, .main, .contact-form{
+.encabezado, #enviar, header, .articulo, .about, .main, .contact-form, .about-container, .container-catalogo{
     flex-direction: column;
 }
 
-.inputs, header, .articulo, .about, .encabezado, .container-contact, .contact-form, .form{
+.inputs, header, .articulo, .about, .encabezado, .container-contact, .contact-form, .form, .about-container{
     align-items: center;
 }
 
@@ -164,7 +170,7 @@ h2, header .eslogan, .subtitulo, .links a{
     height: 100vh;
 }
 
-.about, .contact-form, .mensaje-contacto{
+.contact-form, .mensaje-contacto{
     width: 50%;
 }
 .container-redes{
@@ -230,13 +236,16 @@ header .eslogan{
     font-size: 16px;
 }
 .about-text{
-    font-size: 18px;
+    font-size: 25px;
 }
 .container-redes .redes i{
     font-size: 20px;
 }
-.subtitulo, .links a, .noticia, .about-title, .icon{
+.subtitulo, .links a, .noticia, .icon{
     font-size: 25px;
+}
+.about-title{
+    font-size: 38px;
 }
 h2{
     font-size: 40px;
@@ -287,10 +296,9 @@ footer{
 }
 
 .fotomain{
-    margin-left: 20px;
     border-radius: 5%;
-    height: 300px;
-    width: 350px;
+    height: 250px;
+    width: 300px;
 }
 .subpage{
     height: 350px;
@@ -369,12 +377,10 @@ footer h4{
 .card {
     color: white;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr) ;
+    grid-template-rows: repeat(1, 1fr) ;
     gap: 20px;
     align-items: center;
     vertical-align: middle;
-    margin-top: 20px;
-    margin-bottom: 200px;/*MARGIN PARA EL FOOTER*/
 }
 
 .card .item {
