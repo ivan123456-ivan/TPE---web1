@@ -26,43 +26,40 @@
         <nav>
           <ul class="nav">
             <li type="menu" class="btn-header">
-              <a href="../index.html" target="_blank" rel="noopener noreferrer"
-                >Home<i class="bi bi-house"> </i
-              ></a>
+              <a href="../index.html">Home<i class="bi bi-house"> </i></a>
             </li>
             <li type="menu" class="btn-header">
-              <a
-                href="../ultimas-noticias.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Ultimas Noticias</a
+              <a href="../ultimas-noticias.html">Ultimas Noticias</a
               ><i class="bi bi-exclamation-diamond"> </i>
             </li>
             <li type="menu" class="btn-header">
-              <a
-                href="../categorias.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Categorías</a
+              <a href="../categorias.html">Categorías</a
               ><i class="bi bi-bookmark"> </i>
             </li>
             <li type="menu" class="btn-header">
-              <a
-                href="../contacto.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Contacto</a
+              <a href="../contacto.html">Contacto</a
               ><i class="bi bi-telephone"> </i>
             </li>
           </ul>
         </nav>
       </header>
+
+      <ul class="container-redes">
+        <li class="redes"><i class="bi bi-twitch"></i></li>
+        <li class="redes"><i class="bi bi-twitter"></i></li>
+        <li class="redes"><i class="bi bi-facebook"></i></li>
+        <li class="redes"><i class="bi bi-messenger"></i></li>
+        <li class="redes">
+          <a href="https://api.whatsapp.com/send?phone=2494696975" target="_blank">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </li>
+      </ul>
+
       <section>
         <article class="news">
-          <div class="encabezado">
-            <div class="division"></div>
+          <div class="encabezado division">
             <h2>Conflicto - Arde el PRO</h2>
-            <div class="division"></div>
             <p class="descripcion-page">
               Algunos hablan de un punto de quiebre. Qué pasará en Juntos por el
               cambio tras la pelea que desató la decisión de Larreta de dividir
@@ -75,8 +72,6 @@
               radicalismo quien lo apoyó.
             </p>
           </div>
-
-          <div class="division"></div>
 
           <div class="contenedor-noticia">
             <p class="noticia">
@@ -117,55 +112,39 @@
             </p>
           </div>
 
-          <div class="division"></div>
-
-          <form action="">
-            <h3 class="subtitulo comentarios">Comentarios</h3>
+          <form action="" class="contact-form division">
+            <h3 class="subtitulo">Comentarios</h3>
 
             <div class="coments">
               <textarea
                 name="comentarios"
-                class="comentarios"
+                class="mensaje-contacto"
                 cols="65"
                 rows="10"
                 placeholder="Comentario..."
-                required
               ></textarea>
 
               <input
                 type="text"
                 name="nombre"
-                class="inputs"
+                class="contact-input"
                 placeholder="NOMBRE"
-                required
               />
 
               <input
                 type="email"
                 name="email"
-                class="inputs"
+                class="contact-input"
                 placeholder="CORREO ELECTRÓNICO"
-                required
               />
 
-              <input type="submit" class="inputs enviar" />
+              <button type="submit" class="btn1">Enviar</button>
             </div>
           </form>
-          <div class="division"></div>
         </article>
       </section>
     </div>
-    <ul class="container-redes">
-      <li class="redes"><i class="bi bi-twitch"></i></li>
-      <li class="redes"><i class="bi bi-twitter"></i></li>
-      <li class="redes"><i class="bi bi-facebook"></i></li>
-      <li class="redes"><i class="bi bi-messenger"></i></li>
-      <li class="redes">
-        <a href="https://api.whatsapp.com/send?phone=2494696975" target="_blank"
-          ><i class="bi bi-whatsapp"></i
-        ></a>
-      </li>
-    </ul>
+    
     <footer>
       <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
     </footer>

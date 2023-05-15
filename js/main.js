@@ -2,6 +2,7 @@
 
 const min = 999;
 const max = 9999;
+
 let body = document.querySelector("#body");
 let irCaptcha = document.querySelector("#captcha");
 let captcha = document.querySelector("#container-captcha");
@@ -10,13 +11,16 @@ let textCaptcha = document.querySelector("#aleatorio");
 let input = document.querySelector("#numero-usuario");
 let btnSubmit = document.querySelector("#submit");
 let icon = document.querySelector("#icon-verif");
-let ramdon = Math.floor((Math.random()* (max - min) + min)+1);
+
+let ramdon;
+
+btnSubmit.addEventListener("click", checking);
 
 crear_captcha();
 
 function crear_captcha() {
+    ramdon = Math.floor((Math.random()* (max - min) + min)+1);
     textCaptcha.innerHTML = ramdon;
-    btnSubmit.addEventListener("click", checking);
 }
 
 function checking() {

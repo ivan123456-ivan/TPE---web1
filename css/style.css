@@ -2,7 +2,7 @@
 /*icons ↥ */
 :root{
     --fondo:rgb(240, 248, 255);
-    --colorTitulo: rgb(222, 184, 135);
+    --colorTitulo: rgb(202, 166, 75);
     --celeste: rgb(157, 195, 239);
     --gray: rgba(212, 212, 212, 0.395);
 }
@@ -14,7 +14,6 @@ body, html{
     margin: auto;
     width: 100%;
 }
-
 
 *{
     box-sizing: border-box;
@@ -30,7 +29,7 @@ body, html{
     display: flex;
 }
 
-.division, nav, .articulo, .info, .logo, .about-container, .container-contact, header, .main, .about{
+nav, .articulo, .info, .logo, .about-container, .container-contact, header, .main, .about{
     width: 100%;
 }
 .section-category, .container-catalogo{
@@ -48,22 +47,22 @@ body, html{
     justify-content: center;
 }
 
-.inputs, .articulo, .nav, .logo, .info, .about, .contact-form, .container-catalogo{
+.articulo, .nav, .logo, .info, .about, .contact-form, .container-catalogo{
     justify-content: space-evenly;
 }
 
 .main, .about-container{
     justify-content: space-between;
 }
-.nav, .inputs{
+.nav{
     flex-direction: row;
 }
 
-.encabezado, #enviar, header, .articulo, .about, .main, .contact-form, .about-container, .container-catalogo{
+.encabezado, header, .articulo, .about, .main, .contact-form, .about-container, .container-catalogo{
     flex-direction: column;
 }
 
-.inputs, header, .articulo, .about, .encabezado, .container-contact, .contact-form, .form, .about-container{
+header, .articulo, .about, .encabezado, .container-contact, .contact-form, .form, .about-container{
     align-items: center;
 }
 
@@ -125,18 +124,12 @@ h2{
     color: #00000080;
 }
 
-.division, .comentarios, .inputs, th, .gray{
+.comentarios, th, .gray{
     background-color: var(--gray);
 }
 
 .btn-header, .btn-header, .redes{
     background-color: rgb(106, 168, 240);
-}
-
-.enviar{
-    color: rgb(53, 53, 53);
-    cursor: pointer;
-    background-color: rgb(212, 212, 212);
 }
 
 header .eslogan{
@@ -170,9 +163,6 @@ h2, header .eslogan, .subtitulo, .links a{
     height: 100vh;
 }
 
-.contact-form, .mensaje-contacto{
-    width: 50%;
-}
 .container-redes{
     position: fixed;
 }
@@ -192,22 +182,14 @@ header{
 
 /* Footer */
 
-.btn-enviar{
-    width: 20%;
-}
-.links a{
-    width: 10px;
-}
 .descripcion, .descripcion-page{
     width: 420px;
 }
 .main{
     min-height: 100vh;
-}
-
-.main{
     height: 100%;
 }
+
 header{
     height: 30%;
     min-height: 140px;
@@ -226,15 +208,11 @@ h1{
 .final{
     margin-bottom: 80px;
 }
-.btn-enviar{
-    padding: 10px;
-}
+
 header .eslogan{
     font-size: 12px;
 }
-.btn-enviar{
-    font-size: 16px;
-}
+
 .about-text{
     font-size: 25px;
 }
@@ -291,7 +269,7 @@ footer{
     padding: 10px 10px;
     border-radius: 5px;
 }
-.links a, .btn-header, #enviar, .container-redes{
+.links a, .btn-header, .container-redes{
     cursor: pointer;
 }
 
@@ -335,11 +313,12 @@ iframe{
     margin-block: 50px;
 }
 
-.division{
-    height: 2px;
-}
-.division, .inputs, .comentarios{
+.comentarios{
     border: none;
+}
+
+.division{
+    border-block: 2px solid var(--gray);
 }
 
 .coments{
@@ -354,19 +333,6 @@ iframe{
     margin-left: 110px;
     border-radius: 5px;
     resize: none;
-}
-
-.inputs{
-    height: 40px;
-    width: 250px;
-    border-radius: 5px;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-}
-
-.enviar{
-    height: 30px;
-    width: 200px;
 }
 
 footer h4{
@@ -419,17 +385,17 @@ table{
     box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     transform: translateY(-2px);
 }
+
 .redes:hover{
     transform: translateX(-15px);
     opacity: 0.6;
 }
-.enviar:hover{
-    outline: var(--celeste) 2px solid;
-    letter-spacing: 1px;
-    background-color: aliceblue;
-    color: black;
+
+#numero-usuario{
+    text-align: center;
 }
-.comentarios:focus , .inputs:focus{
+
+.mensaje-contacto:focus, .contact-input:focus{
     outline: var(--celeste) 2px solid;
 }
 
@@ -476,15 +442,13 @@ table{
     background: linear-gradient(to right bottom, #1cd292, #cdffed);
 }
 
-a .text{
-    margin: 10px;
+.text{
     color: white;
 }
 
 .icon:hover{
     transform: translateY(-5px);
 }
-
 
 .escarapela-container{
     width: 77px;
@@ -494,8 +458,6 @@ a .text{
 .escarapela-capa-1, .escarapela-capa-3{
     background-color: #71ABDE;
     border-radius: 100%;
-
-    
 }
 
 .escarapela-capa-1{
@@ -560,37 +522,7 @@ a .text{
     justify-content: center;
 }
 
-.ocultar{
-    display: none !important;
-}
-  
-.input {
-    width: 4.5em;
-    height: 2.5em;
-    margin: 1em;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    background-color: rgb(235, 235, 235);
-    box-shadow: inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff;
-    padding-left: 15px;
-}
-  
-.input:hover {
-    box-shadow: inset 0px 0px 0px #d1d1d1, inset 0px 0px 0px #ffffff;
-    background-color: lightgrey;
-}
-  
-.input:focus {
-    box-shadow: inset 0px 0px 0px #d1d1d1, inset 0px 0px 0px #ffffff;
-    background-color: lightgrey;
-}
-  
-.buttons{
-    display: flex;
-}
-
-.btn1, .btn2 {
+.btn1{
     margin: 10px;
     cursor: pointer;
     width: 17em;
@@ -603,15 +535,6 @@ a .text{
   
 .btn1:hover {
     box-shadow: inset 3px 3px 6px #b5b5b5, inset -3px -3px 6px #ffffff;
-}
-
-
-.btn2:hover {
-    box-shadow: inset 3px 3px 6px #b5b5b5, inset -3px -3px 6px #ffffff;
-}
-
-#captcha{
-    cursor: pointer;
 }
 
 .candidatos{
@@ -662,7 +585,7 @@ a .text{
     width: 60%;
 }
 
-.descripcion{
+.porcentajes{
     color: rgb(70, 69, 69);
     font-size: x-large;
 }
