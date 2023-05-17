@@ -26,7 +26,6 @@ html {
 /* General */
 /* FlexBox */
 
-
 .info,
 .coments,
 .encabezado,
@@ -52,7 +51,6 @@ header,
   display: flex;
 }
 
-
 .container-redes,
 .card {
   display: grid;
@@ -63,7 +61,7 @@ header,
 .escarapela-capa-1,
 .escarapela-capa-2,
 .box,
-#container-captcha   {
+#container-captcha {
   justify-content: center;
 }
 
@@ -74,19 +72,19 @@ header,
 .about,
 .contact-form,
 .container-catalogo,
-.coments {
+.coments,
+.about-container {
   justify-content: space-evenly;
 }
 
-.main,
-.about-container {
+.main {
   justify-content: space-between;
 }
 
 .nav {
   flex-direction: row;
 }
-.coments{
+.coments {
   flex-wrap: wrap;
 }
 
@@ -118,7 +116,7 @@ header,
 .card,
 .card .item,
 .escarapela-capa-1,
-.escarapela-capa-2  {
+.escarapela-capa-2 {
   align-items: center;
 }
 /* General */
@@ -136,7 +134,7 @@ header,
 .libertad-avanza,
 .cambiemos,
 .frente-todos,
-.neutro  {
+.neutro {
   width: 100%;
 }
 .coments {
@@ -170,7 +168,7 @@ footer,
   opacity: 0.7;
   padding: 18px 30px;
   -webkit-box-reflect: below 0px
-  linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
   box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
 }
@@ -241,25 +239,24 @@ footer,
 /*Header*/
 /*Tamaños, fuentes, posiciones, margenes y paddings*/
 
-
 h1 {
-    font-size: 70px;
-    margin: 0;
-  }
-header {
-    height: 30%;
-    min-height: 140px;
+  font-size: 70px;
+  margin: 0;
 }
 header {
-    position: sticky;
-    top: 0;
-  }
-  
+  height: 30%;
+  min-height: 140px;
+}
+header {
+  position: sticky;
+  top: 0;
+}
+
 .logo {
-    width: 40%;
+  width: 40%;
 }
 header .eslogan {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .btn-header {
@@ -299,61 +296,59 @@ header .eslogan {
 /* fondos, decoraciones y colores */
 
 h1 {
-    color: var(--colorTitulo);
-  }
+  color: var(--colorTitulo);
+}
 .btn-header,
 a i,
 .redes {
-    color: var(--fondo);
+  color: var(--fondo);
 }
-  
+
 .btn-header a {
-    color: white;
+  color: white;
 }
-  
+
 header,
 footer {
-    background-color: var(--fondo);
-    z-index: 1;
+  background-color: var(--fondo);
+  z-index: 1;
 }
 
-
-  
 /*Fin header*/
 
 /* main */
 /*Tamaños, fuentes, posiciones, margenes y paddings*/
 .main {
-    min-height: 100vh;
-    height: 100%;
+  min-height: 100vh;
+  height: 100%;
 }
 .container-comentario {
-    height: 60vh;
+  height: 60vh;
 }
 
 .info {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 .contact-form {
-    height: 100vh;
+  height: 100vh;
 }
-  
+
 .container-redes {
-    position: fixed;
+  position: fixed;
 }
 .container-contact {
-    height: 100%;
-    min-height: 100vh;
-  }
+  height: 100%;
+  min-height: 100vh;
+}
 .about-container {
-    min-height: 400px;
+  min-height: 100vh;
 }
 
 .about-text {
-    font-size: 25px;
+  font-size: 25px;
 }
 .container-redes .redes i {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .subtitulo,
@@ -370,16 +365,16 @@ h2 {
 }
 
 .contact-input {
-    width: 50%;
-    height: 32px;
-    border: 1px solid #0f0f0f;
-    border-radius: 10px;
+  width: 50%;
+  height: 32px;
+  border: 1px solid #0f0f0f;
+  border-radius: 10px;
 }
 .mensaje-contacto {
-    resize: none;
+  resize: none;
 }
 .mensaje-contacto {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .fecha {
@@ -420,7 +415,7 @@ h2 {
   width: 420px;
 }
 .final {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 .descripcion,
@@ -466,12 +461,12 @@ iframe {
 }
 
 .card {
+  width: 100%;
   color: white;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: 20px;
   vertical-align: middle;
-  padding: 50px;
 }
 
 .card .item {
@@ -600,15 +595,15 @@ table {
 /* fondos, decoraciones y colores */
 
 tr:nth-child(even) {
-    background-color: var(--gray);
+  background-color: var(--gray);
 }
-  
+
 .captcha-ok {
-    color: #1cd21c;
+  color: #1cd21c;
 }
-  
+
 .captcha-fail {
-    color: #d21c31;
+  color: #d21c31;
 }
 
 .descripcion,
@@ -620,60 +615,60 @@ tr:nth-child(even) {
 }
 
 h2 {
-    color: rgb(224, 198, 157);
+  color: rgb(224, 198, 157);
 }
-  
+
 .subtitulo,
 .links a {
-    color: rgb(94, 94, 94);
+  color: rgb(94, 94, 94);
 }
-  
+
 .pie-foto,
 .noticia {
-    color: #00000080;
+  color: #00000080;
 }
-  
+
 .comentarios,
 th,
 .gray {
-    background-color: var(--gray);
+  background-color: var(--gray);
 }
-  
+
 .btn-header,
-.btn-header,  
+.btn-header,
 .redes {
-    background-color: rgb(106, 168, 240);
+  background-color: rgb(106, 168, 240);
 }
-  
+
 header .eslogan {
-    font-style: italic;
-    font-weight: bold;
+  font-style: italic;
+  font-weight: bold;
 }
 .resaltado {
-    font-weight: bold;
-    color: var(--celeste);
+  font-weight: bold;
+  color: var(--celeste);
 }
 .noticia {
-    font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 h1,
 .links a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-  
+
 a {
-    text-decoration: none;
-    color: rgb(110, 95, 160);
+  text-decoration: none;
+  color: rgb(110, 95, 160);
 }
-  
+
 h2,
 header .eslogan,
 .subtitulo,
 .links a {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 .nav {
-    list-style: none;
+  list-style: none;
 }
 
 .links a,
@@ -695,4 +690,3 @@ footer h4 {
   padding: 30px;
   margin: 0%;
 }
-
