@@ -167,16 +167,22 @@ footer,
 .btn-header:hover {
   opacity: 0.7;
   padding: 18px 30px;
-  -webkit-box-reflect: below 0px
-    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
   box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
 }
 
 .redes:hover {
   transform: translateX(-15px);
   opacity: 0.6;
 }
+
+.card .item:hover {
+  transform: translateY(5px);
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
 
 #numero-usuario {
   text-align: center;
@@ -469,12 +475,6 @@ iframe {
   padding: 10px;
 }
 
-.item:hover {
-  transform: translateY(5px);
-  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s;
-  cursor: pointer;
-}
 
 table,
 th,
@@ -602,7 +602,7 @@ tr:nth-child(even) {
   color: #1cd21c;
 }
 
-.captcha-fail, #warning{
+.captcha-fail{
   color: #d21c31;
 }
 

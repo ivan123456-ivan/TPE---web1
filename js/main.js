@@ -19,6 +19,7 @@ let ramdon;
 btnCaptcha.addEventListener("click", checking);
 
 crear_captcha();
+checking();
 
 function crear_captcha() {
     ramdon = Math.floor((Math.random()* (max - min) + min)+1);
@@ -26,7 +27,12 @@ function crear_captcha() {
 }
 
 function checking() {
-    if (ramdon == input.value) {
+    if (input.value === ''){
+        icon.classList.add("bi-shield-lock-fill");
+        icon.classList.remove("captcha-ok", "captcha-fail");
+        btnContacto.classList.add("ocultar");
+        warning.classList.remove("ocultar");
+    }else if(ramdon == input.value) {
         icon.classList.remove("bi-shield-lock-fill", "bi-shield-fill-x", "captcha-fail");
         icon.classList.add("bi-shield-fill-check", "captcha-ok");
         btnContacto.classList.remove("ocultar");
