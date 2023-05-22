@@ -179,8 +179,9 @@ footer,
 .card .item:hover {
   transform: translateY(5px);
   box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s;
+  transition: all 0.4s;
   cursor: pointer;
+  scale: 0.99;
 }
 
 
@@ -227,6 +228,11 @@ footer,
 
 .text {
   color: white;
+}
+
+.efect-ok{
+  transform: translateY(45px);
+  transition: 0.7s;
 }
 
 .icon:hover {
@@ -502,11 +508,12 @@ table {
   background-color: white;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   transition: 0.4s ease-in-out;
+  min-height: 190px;
 }
 
 .form:hover {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  scale: 0.99;
+  scale: 0.95;
 }
 
 .heading {
@@ -603,6 +610,7 @@ tr:nth-child(even) {
 
 .captcha-ok {
   color: #1cd21c;
+  font-size: 60px;
 }
 
 .captcha-fail{
