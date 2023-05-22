@@ -238,6 +238,10 @@ footer,
 /*Header*/
 /*Tamaños, fuentes, posiciones, margenes y paddings*/
 
+.btn{
+  display: none;
+}
+
 h1 {
   font-size: 70px;
   margin: 0;
@@ -465,7 +469,6 @@ iframe {
   color: white;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  gap: 20px;
 }
 
 .card .item {
