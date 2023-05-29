@@ -60,6 +60,24 @@ header,
     display: grid;
 }
 
+.contact-form,
+.container-contact,
+#container-captcha,
+.form {
+    display: flex;
+}
+
+.contact-form,
+.form {
+    flex-direction: column;
+}
+
+.contact-form,
+.container-contact,
+.form {
+    align-items: center;
+}
+
 .descripcion,
 .descripcion-page,
 .fecha,
@@ -79,7 +97,8 @@ header,
     display: flex;
 }
 .escarapela-capa-1,
-.escarapela-capa-2 {
+.escarapela-capa-2,
+.container-contact {
     justify-content: center;
 }
 .escarapela-capa-1,
@@ -93,6 +112,11 @@ header {
         "btn logo escar"
         "btn eslog escar"
         "nav  nav   nav";
+}
+
+header {
+    position: sticky;
+    top: 0;
 }
 
 .logo {
@@ -224,6 +248,16 @@ header .eslogan,
 /* MAIN */
 
 /*Tamaños, fuentes, posiciones, margenes y paddings*/
+
+.main,
+.contact-form {
+    min-height: 100vh;
+}
+
+.contact-form {
+    justify-content: space-evenly;
+}
+
 .separador,
 .articulo {
     gap: 20px;
@@ -559,15 +593,11 @@ h2 {
     .about,
     .about-container,
     .about,
-    .container-contact,
     .main,
-    .contact-form,
     .section-category,
     .container-catalogo,
     .card .item,
-    .form,
     .box,
-    #container-captcha,
     .candidatos {
         display: flex;
     }
@@ -607,7 +637,6 @@ h2 {
     .container-comentario,
     .coments,
     .card .item,
-    .form,
     .candidatos {
         flex-direction: column;
     }
@@ -617,7 +646,6 @@ h2 {
     .encabezado,
     .container-contact,
     .contact-form,
-    .form,
     .about-container,
     .coments,
     .card,
