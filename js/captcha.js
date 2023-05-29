@@ -29,6 +29,7 @@ function checking() {
         icon.classList.remove("captcha-ok", "captcha-fail");
         btnContacto.classList.add("ocultar");
         warning.classList.remove("ocultar");
+        crear_captcha();
     } else if (ramdon == input.value) {
         icon.classList.remove(
             "bi-shield-lock-fill",

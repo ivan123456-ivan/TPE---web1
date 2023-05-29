@@ -1,115 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diario + Categorias</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Diario + Categorias</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style-responsive.css" />
+    </head>
 
-  <body>
-    <div class="main">
-      <header>
-        <i class="bi bi-list btn" id="btn-nav"></i>
-        <div class="logo">
-          <h1>El Diario +</h1>
-        </div>
-        <div>
-          <p class="eslogan">tu portal de noticias.</p>
-        </div>
-        <div class="escarapela-container">
-            <div class="escarapela-capa-1">
-              <div class="escarapela-capa-2">
-                <div class="escarapela-capa-3"></div>
-              </div>
+    <body>
+        <header>
+            <i class="bi bi-list btn" id="btn-nav"></i>
+            <div class="logo">
+                <h1>El Diario +</h1>
             </div>
-          </div>
-        <nav>
-          <ul class="nav">
-            <li type="menu" class="btn-header">
-              <a href="index.html">Home<i class="bi bi-house"> </i></a>
+            <div>
+                <p class="eslogan">tu portal de noticias.</p>
+            </div>
+            <div class="escarapela-container">
+                <div class="escarapela-capa-1">
+                    <div class="escarapela-capa-2">
+                        <div class="escarapela-capa-3"></div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li type="menu" class="btn-header">
+                        <a href="index.html"
+                            >Home<i class="bi bi-house"> </i
+                        ></a>
+                    </li>
+                    <li type="menu" class="btn-header">
+                        <a href="ultimas-noticias.html">Ultimas Noticias</a
+                        ><i class="bi bi-exclamation-diamond"> </i>
+                    </li>
+                    <li type="menu" class="btn-header">
+                        <a href="categorias.html">Categorías</a
+                        ><i class="bi bi-bookmark"> </i>
+                    </li>
+                    <li type="menu" class="btn-header">
+                        <a href="contacto.html">Contacto</a
+                        ><i class="bi bi-telephone"> </i>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <ul class="container-redes">
+            <li class="redes">
+                <a href="#"><i class="bi bi-twitch"></i></a>
             </li>
-            <li type="menu" class="btn-header">
-              <a href="ultimas-noticias.html">Ultimas Noticias</a
-              ><i class="bi bi-exclamation-diamond"> </i>
+            <li class="redes">
+                <a href="#"><i class="bi bi-twitter"></i></a>
             </li>
-            <li type="menu" class="btn-header">
-              <a href="categorias.html">Categorías</a
-              ><i class="bi bi-bookmark"> </i>
+            <li class="redes">
+                <a href="#"><i class="bi bi-facebook"></i></a>
             </li>
-            <li type="menu" class="btn-header">
-              <a href="contacto.html">Contacto</a><i class="bi bi-telephone"> </i>
+            <li class="redes">
+                <a href="#"><i class="bi bi-messenger"></i></a>
             </li>
-          </ul>
-        </nav>
-      </header>
-      <ul class="container-redes">
-        <li class="redes"><i class="bi bi-twitch"></i></li>
-        <li class="redes"><i class="bi bi-twitter"></i></li>
-        <li class="redes"><i class="bi bi-facebook"></i></li>
-        <li class="redes"><i class="bi bi-messenger"></i></li>
-        <li class="redes">
-          <a
-            href="https://api.whatsapp.com/send?phone=2494696975"
-            target="_blank"
-            ><i class="bi bi-whatsapp"></i
-          ></a>
-        </li>
-      </ul>
-      
-      <section class="section-category">
-        <div class="container-catalogo">
-          <h2 class="division">Menú de Categorías</h2>
-          <div class="categorias">
-            <ul class="card">
-              <li class="item item--1">
-                <i class="icon bi bi-journals"></i>
-                <a href="ultimas-noticias.html" title="Ir a política">
-                  <p class="text">Política</p>
-                </a>
-              </li>
-              <li class="item item--2">
-                <i class="icon bi bi-cash-coin"></i>
-                <p class="text">Economía</p>
-              </li>
-              <li class="item item--3">
-                <i class="icon bi bi-heart-pulse"></i>
-                <a href="ultimas-noticias.html#deportes" title="Ir a deportes">
-                  <p class="text">Deportes</p>
-                </a>
-              </li>
-              <li class="item item--4">
-                <i class="icon bi bi-dpad"></i>
-                <p class="text">Entretenimiento</p>
-              </li>
-              <li class="item item--5">
-                <i class="icon bi bi-megaphone"></i>
-                <p class="text">Policiales</p>
-              </li>
-              <li class="item item--6">
-                <i class="icon bi bi-clouds"></i>
-                <p class="text">Clima</p>
-              </li>
-              <li class="item item--7">
-                <i class="icon bi bi-people"></i>
-                <p class="text">Culturales</p>
-              </li>
-              <li class="item item--8">
-                <i class="icon bi bi-globe"></i>
-                <p class="text">Internacionales</p>
-              </li>
-            </ul>
-          </div>
+            <li class="redes">
+                <a
+                    href="https://api.whatsapp.com/send?phone=2494696975"
+                    target="_blank"
+                    ><i class="bi bi-whatsapp"></i
+                ></a>
+            </li>
+        </ul>
+        <div class="main">
+            <section class="section-category">
+                <div class="container-catalogo">
+                    <h2 class="division">Menú de Categorías</h2>
+                    <div class="categorias">
+                        <ul class="card-category">
+                            <li class="item item--1">
+                                <i class="icon bi bi-journals"></i>
+                                <a
+                                    href="ultimas-noticias.html"
+                                    title="Ir a política"
+                                >
+                                    <p class="text">Política</p>
+                                </a>
+                            </li>
+                            <li class="item item--2">
+                                <i class="icon bi bi-cash-coin"></i>
+                                <p class="text">Economía</p>
+                            </li>
+                            <li class="item item--3">
+                                <i class="icon bi bi-heart-pulse"></i>
+                                <a
+                                    href="ultimas-noticias.html#deportes"
+                                    title="Ir a deportes"
+                                >
+                                    <p class="text">Deportes</p>
+                                </a>
+                            </li>
+                            <li class="item item--4">
+                                <i class="icon bi bi-dpad"></i>
+                                <p class="text">Entretenimiento</p>
+                            </li>
+                            <li class="item item--5">
+                                <i class="icon bi bi-megaphone"></i>
+                                <p class="text">Policiales</p>
+                            </li>
+                            <li class="item item--6">
+                                <i class="icon bi bi-clouds"></i>
+                                <p class="text">Clima</p>
+                            </li>
+                            <li class="item item--7">
+                                <i class="icon bi bi-people"></i>
+                                <p class="text">Culturales</p>
+                            </li>
+                            <li class="item item--8">
+                                <i class="icon bi bi-globe"></i>
+                                <p class="text">Internacionales</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
-      </section>
+        <footer class="division footer">
+            <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
+        </footer>
 
-    <footer class="division">
-      <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
-    </footer>
-
-    
-    <script src="js/main.js"></script>
-  </body>
+        <script src="js/main.js"></script>
+    </body>
 </html>
