@@ -363,7 +363,7 @@ header .eslogan,
 }
 
 .contenedor-noticia {
-    padding: 16px;
+    padding: 20px;
 }
 
 .candidatos {
@@ -402,7 +402,7 @@ iframe {
 }
 
 .links a {
-    color: rgb(146, 121, 58);
+    color: rgba(29, 29, 29, 0.838);
 }
 
 .redes,
@@ -853,6 +853,10 @@ th {
 
     .container-catalogo {
         max-width: 100%;
+    }
+
+    .contenedor-noticia {
+        max-width: 75%;
     }
 
     .about-container {
