@@ -6,6 +6,7 @@
     --resaltado: rgb(52, 163, 231);
     --gray: rgba(212, 212, 212, 0.395);
 }
+
 /* body y html*/
 body,
 html {
@@ -229,6 +230,13 @@ header .eslogan,
     display: block;
     background-color: #83d2f6;
     width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: getDown 0.3s ease-in-out;
+}
+
+.nav-mostrar .nav li {
+    border-block: 2px solid var(--resaltado);
 }
 
 .nav {
@@ -437,6 +445,16 @@ h2 {
 }
 
 /* ANIMACIONES Y EFECTOS */
+
+@keyframes getDown {
+    0% {
+        transform: translateY(-120px); /* para que inicie desde arriba */
+        height: 1%;
+    }
+    100% {
+        height: 100%;
+    }
+}
 
 .item--1 {
     background: linear-gradient(to right bottom, #443e3f, #b2adae);
