@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css");
+
 /*icons ↥ */
 :root {
     --fondo: rgb(240, 248, 255);
@@ -105,11 +106,13 @@ header,
 .escarapela-capa-2 {
     display: flex;
 }
+
 .escarapela-capa-1,
 .escarapela-capa-2,
 .container-contact {
     justify-content: center;
 }
+
 .escarapela-capa-1,
 .escarapela-capa-2 {
     align-items: center;
@@ -210,6 +213,7 @@ h1 {
     width: 60px;
     height: 60px;
 }
+
 .escarapela-capa-2 {
     background-color: #eff7ff;
     border-radius: 100%;
@@ -587,9 +591,11 @@ th {
 
 @keyframes getDown {
     0% {
-        transform: translateY(-120px); /* para que inicie desde arriba */
+        transform: translateY(-120px);
+        /* para que inicie desde arriba */
         height: 1%;
     }
+
     100% {
         height: 100%;
     }
@@ -654,6 +660,7 @@ th {
     background-color: var(--fondo);
     z-index: 1;
 }
+
 /*Tamaños, fuentes, posiciones, margenes y paddings*/
 
 .footer {
@@ -674,41 +681,50 @@ th {
             "nav nav nav";
         column-gap: 10px;
     }
+
     .btn {
         display: none;
     }
+
     .btn,
     .eslogan,
     nav {
         align-self: center;
         justify-self: center;
     }
+
     .logo {
         justify-self: flex-end;
         text-align: end;
     }
+
     .escarapela-container {
         align-self: center;
         justify-self: flex-start;
     }
+
     .eslogan {
         text-align: end;
         font-size: 1em;
     }
+
     nav {
         display: flex;
         width: 100%;
         height: 50px;
     }
+
     .logo h1 {
         font-size: 4.375em;
     }
+
     .nav {
         flex-direction: row;
         width: 100%;
         height: 50px;
         align-items: flex-start;
     }
+
     .nav li {
         background-color: rgb(106, 168, 240);
         border-top-left-radius: 10px;
@@ -717,21 +733,26 @@ th {
         padding: 15px 30px;
         letter-spacing: 0.5px;
     }
+
     .nav li a {
         color: var(--fondo);
     }
+
     .escarapela-capa-3 {
         width: 25px;
         height: 25px;
     }
+
     .escarapela-capa-2 {
         width: 53px;
         height: 56px;
     }
+
     .escarapela-capa-1 {
         width: 77px;
         height: 86px;
     }
+
     .escarapela-container {
         width: 77px;
         height: 86px;
@@ -771,7 +792,8 @@ th {
     .contact-form,
     .container-catalogo,
     .coments,
-    .about-container {
+    .about-container,
+    .section-category  {
         justify-content: space-evenly;
     }
 
@@ -819,13 +841,52 @@ th {
     .btn-header:hover {
         opacity: 0.7;
         padding: 18px 30px;
-        -webkit-box-reflect: below 0px
-            linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+        -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
         box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     }
 
     .redes:hover {
         transform: translateX(-15px);
         opacity: 0.6;
+    }
+
+    /*MAIN*/
+    .container-redes {
+        position: fixed;
+    }
+
+    .container-redes {
+        right: 0;
+        top: 50%;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+        color: white;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .card-category {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .categorias {
+        width: 100vw;
+    }
+
+    .card-category .item {
+        list-style: none;
+    }
+
+    .section-category {
+        height: 70%;
+    }
+    .info{
+        width: 70%;
     }
 }
