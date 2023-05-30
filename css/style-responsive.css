@@ -851,6 +851,11 @@ th {
     }
 
     /*MAIN*/
+
+    .about-container{
+        height: 100%;
+    }
+
     .container-redes {
         position: fixed;
     }
