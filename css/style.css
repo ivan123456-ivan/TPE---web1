@@ -21,19 +21,12 @@
 
 /* main */
 /*Tamaños, fuentes, posiciones, margenes y paddings*/
-.main {
-    min-height: 100vh;
-    height: 100%;
-}
 .container-comentario {
     height: 60vh;
 }
 
 .info {
     margin-top: 15px;
-}
-.contact-form {
-    height: 100vh;
 }
 
 .container-contact {
@@ -59,12 +52,6 @@ h2 {
     text-align: end;
 }
 
-.subpage {
-    height: 350px;
-    width: 450px;
-    border-radius: 5%;
-    border: 1.5px solid black;
-}
 .contenedor-noticia {
     width: 850px;
     margin-left: 110px;
@@ -74,13 +61,7 @@ h2 {
 .descripcion-page {
     width: 420px;
 }
-.final {
-    margin-bottom: 80px;
-}
 
-.noticia {
-    line-height: 35px;
-}
 .descripcion-page {
     width: auto;
     margin: 50px;
@@ -91,131 +72,15 @@ h2 {
     margin: 20px;
 }
 
-iframe {
-    width: 560px;
-    height: 315px;
-    border-radius: 5px;
-    margin-block: 50px;
-}
-
-.comentarios {
-    border: none;
-}
-
-.comentarios {
-    margin-left: 110px;
-    border-radius: 5px;
-    resize: none;
-}
-
-table,
-th,
-td {
-    text-align: center;
-    font-size: 20px;
-}
-
-td {
-    color: #797475;
-}
-
-table {
-    width: 100%;
-    margin: 20px;
-    border-collapse: collapse;
-}
-
-.candidatos {
-    list-style: none;
-    z-index: 0;
-}
-
-.libertad-avanza,
-.cambiemos,
-.frente-todos,
-.neutro {
-    opacity: 0.9;
-    background-color: rgb(199, 67, 133);
-    height: auto;
-    color: white;
-    margin-bottom: 10px;
-}
-
-.neutro,
-.neutro .descripcion {
-    background-color: rgb(66, 68, 69);
-    width: 35%;
-    color: white;
-}
-
-.cambiemos,
-.bullrich,
-.manes {
-    background-color: rgb(243, 187, 32);
-    width: 80%;
-}
-
-.manes {
-    width: 40%;
-}
-
-.bullrich {
-    width: 70%;
-}
-
-.frente-todos,
-.massa,
-.kicillof {
-    background-color: rgb(66, 105, 158);
-    width: 70%;
-}
-
-.massa {
-    width: 65%;
-}
-
-.kicillof {
-    width: 60%;
-}
-
-.porcentajes {
-    color: rgb(29, 29, 29);
-    font-size: x-large;
-}
-
 /* fondos, decoraciones y colores */
-
-tr:nth-child(even) {
-    background-color: var(--gray);
-}
-
-.descripcion,
-.descripcion-page,
-.fecha,
-.fecha2 {
-    color: rgb(170, 170, 170);
-    font-size: 20px;
-}
 
 .pie-foto,
 .noticia {
     color: #00000080;
 }
 
-.comentarios,
-th,
-.gray {
+.comentarios {
     background-color: var(--gray);
-}
-
-.btn-header,
-.btn-header,
-.redes {
-    background-color: rgb(106, 168, 240);
-}
-
-.noticia {
-    font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 h1,
