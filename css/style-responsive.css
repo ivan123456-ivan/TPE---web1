@@ -894,4 +894,7 @@ th {
     .info{
         width: 70%;
     }
+    .container-catalogo{
+        font-size: 1.5em;
+    }
 }
