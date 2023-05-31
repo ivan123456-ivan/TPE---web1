@@ -431,7 +431,18 @@ h2,
 .division {
     border-block: 2px solid var(--gray);
 }
+.container-form-table {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+}
 
+.form-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 .form {
     width: 290px;
     border-radius: 15px;
@@ -527,8 +538,11 @@ th {
 }
 
 .mensaje-contacto {
-    resize: none;
     max-width: 100vw;
+}
+.mensaje-contacto,
+.description-table {
+    resize: none;
 }
 
 .mensaje-contacto {
@@ -839,8 +853,7 @@ th {
     .btn-header:hover {
         opacity: 0.7;
         padding: 18px 30px;
-        -webkit-box-reflect: below 0px
-            linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+        -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
         box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     }
 
@@ -900,9 +913,11 @@ th {
     .section-category {
         height: 70%;
     }
+
     .info {
         width: 70%;
     }
+
     .container-catalogo {
         font-size: 1.5em;
     }
@@ -910,5 +925,30 @@ th {
     i.icon:hover::before {
         transform: translateY(-5px);
         transition: 0.4s;
+    }
+
+    .container-table,
+    .form-table,
+    .container-form-table{
+        width: 100%;
+    }
+    
+    .form-table input,
+    .container-form-table{
+        height: 30%;
+    }
+    .container-table{
+        height: 60%;
+    }
+    .container-form-table {
+        display: flex;
+        align-items: center;
+    }
+
+    .form-table {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
     }
 }
