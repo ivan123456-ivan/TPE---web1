@@ -14,10 +14,11 @@ let informacionTable = [
         titulo: "Este es un titulo",
         subtitulo: "Este es un subtitulo",
         descripcion: "Esta es una descripcion",
+        destacado: checkboxTable.checked,
     },
 ];
 
-mostrar_tabla(0, 1);
+mostrar_tabla(0);
 
 btnEnviarTable.addEventListener("click", (e) => {
     e.preventDefault();
@@ -26,11 +27,15 @@ btnEnviarTable.addEventListener("click", (e) => {
         titulo: inputTitulo.value,
         subtitulo: inputSubtitulo.value,
         descripcion: inputDescripcion.value,
-        destacado: checkboxTable,
+        destacado: checkboxTable.checked,
     };
     informacionTable.push(nuevaInformacion);
     for (let i = 0; i < informacionTable.length; i++) {
-        mostrar_tabla(i, 2);
+        if (informacionTable[i].destacado === true) {
+            mostrar_destacado(i);
+        } else {
+            mostrar_tabla(i);
+        }
     }
 });
 
@@ -41,11 +46,21 @@ btnGenerarItems.addEventListener("click", (e) => {
         titulo: "Nuevo titulo generado",
         subtitulo: "Nuevo subtitulo generado",
         descripcion: "Nueva descripcion generada",
+        destacado: checkboxTable.checked,
     };
 
     for (let i = 1; i <= 3; i++) {
         informacionTable.push(item1);
-        mostrar_tabla(i, 2);
+    }
+
+    containerTable.innerHTML = " ";
+
+    for (let j = 0; j < informacionTable.length; j++) {
+        if (informacionTable[j].destacado === true) {
+            mostrar_destacado(j);
+        } else {
+            mostrar_tabla(j);
+        }
     }
 });
 
@@ -59,10 +74,10 @@ btnBorrarTable.addEventListener("click", (e) => {
             descripcion: "Esta es una descripcion",
         },
     ];
-    mostrar_tabla(0, 1);
+    mostrar_tabla(0);
 });
 
-function mostrar_tabla(sub, signo) {
+function mostrar_tabla(sub) {
     let elementos = `  
     <tr>
         <td>${informacionTable[sub].titulo}</td>
@@ -70,7 +85,10 @@ function mostrar_tabla(sub, signo) {
         <td>${informacionTable[sub].descripcion}</td>
     </tr>
     `;
+    containerTable.innerHTML += elementos;
+}
 
+function mostrar_destacado(sub) {
     let elementosImportantes = `  
     <tr>
         <td class="es-importante">${informacionTable[sub].titulo}</td>
@@ -78,17 +96,5 @@ function mostrar_tabla(sub, signo) {
         <td class="es-importante">${informacionTable[sub].descripcion}</td>
     </tr>
     `;
-    switch (signo) {
-        case 1:
-            containerTable.innerHTML = elementos;
-            break;
-        case 2: //para concatenar
-            containerTable.innerHTML += elementos;
-            break;
-        case 3:
-            containerTable.innerHTML += elementosImportantes;
-            break;
-        default:
-            break;
-    }
+    containerTable.innerHTML += elementosImportantes;
 }

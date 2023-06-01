@@ -393,6 +393,8 @@ iframe {
 
 .container-table {
     width: 93vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 /* fondos, decoraciones y colores */
@@ -438,11 +440,11 @@ h2,
 .division {
     border-block: 2px solid var(--gray);
 }
+
 .container-form-table {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 45%;
 }
 
 .form-table {
@@ -875,6 +877,12 @@ th {
     iframe {
         width: 50vw;
         height: 50vh;
+    }
+
+    /*colores*/
+
+    .nav {
+        background-color: var(--fondo);
     }
 
     /* GENERAL */
