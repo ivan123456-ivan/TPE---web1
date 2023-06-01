@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Idea de noticia</title>
+        <title>Diario + crear idea de noticia</title>
         <link rel="stylesheet" href="css/style-responsive.css" />
     </head>
 
@@ -41,7 +41,7 @@
                     </li>
                     <li type="menu" class="btn-header">
                         <a href="crear-tabla-noticia.html">Idea de noticia
-                            <i class="bi bi-exclamation-diamond"> </i></a>
+                            <i class="bi bi-lightbulb"> </i></a>
                     </li>
                     <li type="menu" class="btn-header">
                         <a href="contacto.html">Contacto <i
@@ -80,8 +80,22 @@
                     <textarea name="description-table" class="description-table"
                         id="description-table"
                         class="description-table" placeholder="Descripcion"
-                        cols="30" rows="10"></textarea>
-                    <button type="submit" class="btn1" id="btn-enviar-tabla">Enviar</button>
+                        cols="30" rows="10">
+                    </textarea>
+                    <div class="botones-table">
+                        <button type="submit" class="btn1" id="btn-enviar-tabla">Enviar</button>
+                        <button type="submit" class="btn1"
+                            id="btn-generar-items-tabla">Generar
+                            Items
+                        </button>
+                        <button type="submit" class="btn1" id="btn-borrar-tabla">Borrar
+                            Tabla
+                        </button>
+                        <p>Seleccione si es una noticia
+                            importante.</p>
+                        <input type="checkbox" name="checkbox-form"
+                            id="checkbox-form">
+                    </div>
                 </form>
             </div>
 

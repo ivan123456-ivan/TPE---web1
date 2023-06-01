@@ -19,7 +19,6 @@ html {
 * {
     box-sizing: border-box;
     text-decoration: none;
-    transition: all 0.5s;
     padding: 0;
     margin: 0;
 }
@@ -405,6 +404,10 @@ iframe {
     text-align: left;
 }
 
+.es-importante {
+    background-color: var(--colorTitulo);
+}
+
 .links a {
     color: rgba(29, 29, 29, 0.838);
 }
@@ -446,7 +449,8 @@ h2,
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 50vh;
+    height: 48vh;
+    align-items: center;
 }
 
 .form {
@@ -538,7 +542,6 @@ th {
 }
 
 .input-table {
-    width: auto;
     max-height: 5vh;
 }
 
@@ -735,7 +738,6 @@ th {
     }
 
     nav {
-        display: flex;
         width: 100%;
         height: 50px;
     }
@@ -745,7 +747,6 @@ th {
     }
 
     .nav {
-        flex-direction: row;
         width: 100%;
         height: 50px;
         align-items: flex-start;
@@ -755,7 +756,7 @@ th {
         background-color: rgb(106, 168, 240);
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        border: 0px;
+        border-bottom: 2.5px solid var(--resaltado);
         padding: 15px 30px;
         letter-spacing: 0.5px;
     }
@@ -802,7 +803,11 @@ th {
     .container-catalogo,
     .card .item,
     .box,
-    .candidatos {
+    .candidatos,
+    .botones-table,
+    nav,
+    .container-form-table,
+    .form-table {
         display: flex;
     }
 
@@ -813,6 +818,11 @@ th {
         justify-content: center;
     }
 
+    .nav,
+    .form-table {
+        flex-direction: row;
+    }
+
     .articulo,
     .info,
     .about,
@@ -820,7 +830,8 @@ th {
     .container-catalogo,
     .coments,
     .about-container,
-    .section-category {
+    .section-category,
+    .form-table {
         justify-content: space-evenly;
     }
 
@@ -841,7 +852,8 @@ th {
     .container-catalogo,
     .container-comentario,
     .card .item,
-    .candidatos {
+    .candidatos,
+    .botones-table {
         flex-direction: column;
     }
 
@@ -852,7 +864,9 @@ th {
     .contact-form,
     .about-container,
     .card,
-    .card .item {
+    .card .item,
+    .container-form-table,
+    .form-table {
         align-items: center;
     }
 
@@ -866,8 +880,10 @@ th {
     /* GENERAL */
     /* ANIMACIONES Y EFECTOS */
     .btn-header:hover {
+        border: none;
+        transition: all 0.4s;
         opacity: 0.7;
-        padding: 18px 30px;
+        padding: 16px 30px;
         -webkit-box-reflect: below 0px
             linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
         box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
@@ -930,6 +946,10 @@ th {
         height: 70%;
     }
 
+    .input-table {
+        width: auto;
+    }
+
     .info {
         width: 70%;
     }
@@ -954,16 +974,5 @@ th {
     }
     .container-table {
         height: 60%;
-    }
-    .container-form-table {
-        display: flex;
-        align-items: center;
-    }
-
-    .form-table {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
     }
 }
