@@ -37,13 +37,7 @@ btnEnviarTable.addEventListener("click", (e) => {
             destacado: checkboxTable.checked,
         };
         informacionTable.push(nuevaInformacion);
-        for (let i = 0; i < informacionTable.length; i++) {
-            if (informacionTable[i].destacado === true) {
-                mostrar_destacado(i);
-            } else {
-                mostrar_tabla(i);
-            }
-        }
+        mostrarInformacion();
         advertencia.classList.add("ocultar");
     } else {
         advertencia.classList.remove("ocultar");
@@ -69,13 +63,8 @@ btnGenerarItems.addEventListener("click", (e) => {
 
     containerTable.innerHTML = " ";
 
-    for (let j = 0; j < informacionTable.length; j++) {
-        if (informacionTable[j].destacado === true) {
-            mostrar_destacado(j);
-        } else {
-            mostrar_tabla(j);
-        }
-    }
+    mostrarInformacion();
+    
 });
 
 btnBorrarTable.addEventListener("click", (e) => {
@@ -111,4 +100,13 @@ function mostrar_destacado(sub) {
     </tr>
     `;
     containerTable.innerHTML += elementosImportantes;
+}
+function mostrarInformacion(){
+    for (let j = 0; j < informacionTable.length; j++) {
+        if (informacionTable[j].destacado === true) {
+            mostrar_destacado(j);
+        } else {
+            mostrar_tabla(j);
+        }
+    }
 }
