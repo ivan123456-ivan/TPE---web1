@@ -726,6 +726,10 @@ th {
 }
 
 @media only screen and (min-width: 1024px) {
+    .desborde{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
     header {
         grid-template-columns: 1.5fr 1fr;
         grid-template-areas:
@@ -896,6 +900,7 @@ th {
 
     /* General */
     /*Tamaños, fuentes, posiciones, margenes y paddings*/
+
     iframe {
         width: 50vw;
         height: 50vh;
@@ -1009,5 +1014,8 @@ th {
     }
     .container-table {
         height: 60%;
+    }
+    .separador{
+        height: 100vh;
     }
 }
