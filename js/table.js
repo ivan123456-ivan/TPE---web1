@@ -8,6 +8,8 @@ let checkboxTable = document.querySelector("#checkbox-form");
 let inputTitulo = document.querySelector("#inputTitulo");
 let inputSubtitulo = document.querySelector("#inputSubtitulo");
 let inputDescripcion = document.querySelector("#description-table");
+let advertencia = document.querySelector("#advertencia");
+inputDescripcion.value = "";
 
 let informacionTable = [
     {
@@ -22,20 +24,32 @@ mostrar_tabla(0);
 
 btnEnviarTable.addEventListener("click", (e) => {
     e.preventDefault();
-    containerTable.innerHTML = " ";
-    let nuevaInformacion = {
-        titulo: inputTitulo.value,
-        subtitulo: inputSubtitulo.value,
-        descripcion: inputDescripcion.value,
-        destacado: checkboxTable.checked,
-    };
-    informacionTable.push(nuevaInformacion);
-    for (let i = 0; i < informacionTable.length; i++) {
-        if (informacionTable[i].destacado === true) {
-            mostrar_destacado(i);
-        } else {
-            mostrar_tabla(i);
+    if (
+        inputTitulo.value != "" &&
+        inputSubtitulo.value != "" &&
+        inputDescripcion.value != ""
+    ) {
+        containerTable.innerHTML = " ";
+        let nuevaInformacion = {
+            titulo: inputTitulo.value,
+            subtitulo: inputSubtitulo.value,
+            descripcion: inputDescripcion.value,
+            destacado: checkboxTable.checked,
+        };
+        informacionTable.push(nuevaInformacion);
+        for (let i = 0; i < informacionTable.length; i++) {
+            if (informacionTable[i].destacado === true) {
+                mostrar_destacado(i);
+            } else {
+                mostrar_tabla(i);
+            }
         }
+        advertencia.classList.add("ocultar");
+    } else {
+        advertencia.classList.remove("ocultar");
+        setTimeout(() => {
+            advertencia.classList.add("ocultar");
+        }, 5000);
     }
 });
 
