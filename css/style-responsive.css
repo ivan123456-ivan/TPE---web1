@@ -726,7 +726,7 @@ th {
 }
 
 @media only screen and (min-width: 1024px) {
-    .desborde{
+    .desborde {
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -906,6 +906,11 @@ th {
         height: 50vh;
     }
 
+    .desplazamiento {
+        position: absolute;
+        top: -200px;
+    }
+
     /*colores*/
 
     .nav {
@@ -1015,7 +1020,7 @@ th {
     .container-table {
         height: 60%;
     }
-    .separador{
+    .separador {
         height: 100vh;
     }
 }
