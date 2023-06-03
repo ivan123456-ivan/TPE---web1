@@ -38,6 +38,9 @@ btnEnviarTable.addEventListener("click", (e) => {
         };
         informacionTable.push(nuevaInformacion);
         mostrarInformacion();
+        inputTitulo.value = "";
+        inputSubtitulo.value = "";
+        inputDescripcion.value = "";
         advertencia.classList.add("ocultar");
     } else {
         advertencia.classList.remove("ocultar");
@@ -64,7 +67,6 @@ btnGenerarItems.addEventListener("click", (e) => {
     containerTable.innerHTML = " ";
 
     mostrarInformacion();
-    
 });
 
 btnBorrarTable.addEventListener("click", (e) => {
@@ -101,7 +103,7 @@ function mostrar_destacado(sub) {
     `;
     containerTable.innerHTML += elementosImportantes;
 }
-function mostrarInformacion(){
+function mostrarInformacion() {
     for (let j = 0; j < informacionTable.length; j++) {
         if (informacionTable[j].destacado === true) {
             mostrar_destacado(j);

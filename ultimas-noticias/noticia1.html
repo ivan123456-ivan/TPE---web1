@@ -140,27 +140,32 @@
               type="text"
               name="nombre"
               class="contact-input"
-              placeholder="NOMBRE"
-              required />
+              placeholder="NOMBRE" />
 
             <input
               type="email"
               name="email"
               class="contact-input"
-              placeholder="CORREO ELECTRÓNICO"
-              required />
+              placeholder="CORREO ELECTRÓNICO" />
 
             <textarea
               name="comentarios"
               class="mensaje-contacto"
               cols="65"
               rows="10"
-              placeholder="Comentario..."
-              required></textarea>
+              placeholder="Comentario...">
+            </textarea>
 
             <button type="submit" class="btn1">Enviar</button>
           </div>
+          <div class="advertencia ocultar" id="advertencia">
+            <p>Debe completar todos los campos</p>
+          </div>
         </form>
+
+        <div class="coments-container">
+
+        </div>
       </article>
     </section>
 
@@ -169,5 +174,6 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/coments.js"></script>
   </body>
 </html>

@@ -407,6 +407,61 @@ iframe {
     animation: warn 1s infinite ease-in-out;
 }
 
+.coments-container {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+.coment {
+    max-width: 80vw;
+    min-height: 20vh;
+    max-height: 35vh;
+    background-color: var(--gray);
+    border-radius: 5px;
+    padding: 15px;
+    text-align: justify;
+    display: grid;
+    margin: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    grid-template-areas:
+        "head"
+        "info"
+        "foot";
+}
+
+.coment-header {
+    display: flex;
+    align-items: center;
+    grid-area: head;
+}
+
+.coment-info {
+    grid-area: info;
+}
+
+.coment .coment-header img {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    margin-right: 20px;
+}
+
+.coment .coment-header p {
+    font-weight: bold;
+}
+
+.coment-footer {
+    grid-area: foot;
+    color: gray;
+    align-self: end;
+}
+
 /* fondos, decoraciones y colores */
 
 .noticia {
@@ -943,6 +998,10 @@ th {
 
     .contenedor-noticia {
         max-width: 75%;
+    }
+
+    .candidatos {
+        width: 70vw;
     }
 
     .about-container {
