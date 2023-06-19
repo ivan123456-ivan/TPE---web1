@@ -685,7 +685,33 @@ th {
     font-size: x-large;
 }
 
+/*LOADER*/
+
+.container-loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    border: 4px solid rgba(0, 0, 0, 0.3);
+    border-left-color: transparent;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+}
+
 /* ANIMACIONES Y EFECTOS */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 @keyframes getDown {
     0% {

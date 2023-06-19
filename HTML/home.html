@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Diario + crear idea de noticia</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>El Diario +</title>
+        <!-- CSS -->
         <link rel="stylesheet" href="css/style.css" />
     </head>
 
@@ -65,64 +65,51 @@
                 <a href="#"><i class="bi bi-messenger"></i></a>
             </li>
             <li class="redes">
-                <a href="https://api.whatsapp.com/send?phone=2494696975"
+                <a
+                    href="https://api.whatsapp.com/send?phone=2494696975"
                     target="_blank"><i class="bi bi-whatsapp"></i></a>
             </li>
         </ul>
-
-        <div class="main separador">
-            <div class="container-form-table">
-                <form action class="form-table">
-                    <input type="text" class="input-table" id="inputTitulo"
-                        placeholder="Titulo">
-                    <input type="text" class="input-table" id="inputSubtitulo"
-                        placeholder="Subtitulo">
-                    <textarea name="description-table" class="description-table"
-                        id="description-table"
-                        class="description-table" placeholder="Descripcion"
-                        cols="30" rows="10">
-                    </textarea>
-                    <div class="botones-table">
-                        <button type="submit" class="btn1" id="btn-enviar-tabla">Enviar</button>
-                        <button type="submit" class="btn1"
-                            id="btn-generar-items-tabla">Generar
-                            Items
-                        </button>
-                        <button type="submit" class="btn1" id="btn-borrar-tabla">Borrar
-                            Tabla
-                        </button>
-                        <p>Seleccione si es una noticia
-                            importante.</p>
-                        <input type="checkbox" name="checkbox-form"
-                            id="checkbox-form">
-                        <div class="advertencia ocultar" id="advertencia">
-                            <p>Debe completar todos los campos</p>
-                        </div>
-                    </div>
-                </form>
+        <article class="main">
+            <div class="about-container">
+                <div class="about">
+                    <h1 class="about-title">¿Quienes somos?</h1>
+                    <h2 class="about-text">
+                        Informandote siempre desde
+                        <span class="resaltado">la mejor perspectiva</span>
+                    </h2>
+                </div>
+                <ul class="card">
+                    <li>
+                        <a href="ultimas-noticias.html"><img
+                                class="fotomain"
+                                src="img/javiermilei.jpg"
+                                alt /></a>
+                    </li>
+                    <li>
+                        <a href="ultimas-noticias.html"><img
+                                class="fotomain"
+                                src="img/monica-seles.png"
+                                alt /></a>
+                    </li>
+                    <li>
+                        <a href="ultimas-noticias.html"><img
+                                class="fotomain"
+                                src="img/messi_scaloni.jpeg"
+                                alt /></a>
+                    </li>
+                    <li>
+                        <a href="ultimas-noticias.html"><img class="fotomain"
+                                src="img/jxc.jpg" alt /></a>
+                    </li>
+                </ul>
             </div>
+        </article>
 
-            <div class="container-table" id="container-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Titulo</th>
-                            <th>Subtitulo</th>
-                            <th>Descripcion</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody-tabla">
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <footer class="division footer">
             <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
         </footer>
 
         <script src="js/main.js"></script>
-        <script src="js/table.js"></script>
     </body>
-
 </html>
