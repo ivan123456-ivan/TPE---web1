@@ -394,7 +394,7 @@ iframe {
 .container-table {
     width: 93vw;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: scroll;
 }
 
 .advertencia {
@@ -1104,6 +1104,7 @@ th {
     }
     .container-table {
         height: 60%;
+        overflow-x: hidden;
     }
     .separador {
         height: 100vh;

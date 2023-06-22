@@ -180,7 +180,9 @@ async function mostrarInformacion() {
     containerTable.innerHTML = `
     <tr>
         <td></td>
-
+        
+        <td></td>
+        
         <td>
             <div class="container-loader">
                 <div class="loader">
