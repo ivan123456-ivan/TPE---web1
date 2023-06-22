@@ -1,12 +1,8 @@
 "use strict";
 
 let containerTable = document.querySelector("#tbody-tabla");
-let btnEnviarTable = document.querySelector("#btn-enviar-tabla");
 let btnGenerarItems = document.querySelector("#btn-generar-items-tabla");
-let btnBorrarTable = document.querySelector("#btn-borrar-tabla");
 let checkboxTable = document.querySelector("#checkbox-form");
-let inputTitulo = document.querySelector("#inputTitulo");
-let inputSubtitulo = document.querySelector("#inputSubtitulo");
 let inputDescripcion = document.querySelector("#description-table");
 let form = document.querySelector("#form");
 let advertencia = document.querySelector("#advertencia");
@@ -47,7 +43,7 @@ form.addEventListener("submit", async (e) => {
                 }, 8000);
                 mostrarInformacion();
             } else {
-                alert("No se pudo crear el nuevo elemento.");
+                advertencia.innerHTML = "No se pudo crear el nuevo elemento.";
             }
         } catch (error) {
             console.log(error);
@@ -88,7 +84,7 @@ btnGenerarItems.addEventListener("click", async (e) => {
                     advertencia.classList.add("ocultar");
                 }, 8000);
             } else {
-                alert("No se pudo crear el nuevo elemento.");
+                advertencia.innerHTML = "No se pudo crear el nuevo elemento.";
             }
         }
         mostrarInformacion();
@@ -97,18 +93,88 @@ btnGenerarItems.addEventListener("click", async (e) => {
     }
 });
 
-// btnBorrarTable.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     containerTable.innerHTML = " ";
-//     informacionTable = [
-//         {
-//             titulo: "Este es un titulo",
-//             subtitulo: "Este es un subtitulo",
-//             descripcion: "Esta es una descripcion",
-//         },
-//     ];
-//     mostrar_tabla(0);
-// });
+function eliminarElementos() {
+    let btnsBorrar = document.querySelectorAll(".btn-eliminar");
+    btnsBorrar.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+            e.preventDefault();
+            let id = btn.dataset.item;
+            containerTable.innerHTML = " ";
+            let configuracion = {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json",
+                },
+            };
+            try {
+                let response = await fetch(`${url}/${id}`, configuracion);
+                if (response.status == 200) {
+                    advertencia.classList.remove("ocultar");
+                    advertencia.innerHTML =
+                        "La noticia " + id + " se ha eliminado!";
+                    setTimeout(() => {
+                        advertencia.classList.add("ocultar");
+                    }, 8000);
+                } else {
+                    advertencia.innerHTML = "No se pudo eliminar la tabla.";
+                }
+                mostrarInformacion();
+            } catch (error) {
+                console.log("Error al intentar borrar el registro: ", error);
+            }
+        });
+    });
+}
+
+function editarElementos() {
+    let btnsBorrar = document.querySelectorAll(".btn-editar");
+    btnsBorrar.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+            e.preventDefault();
+            let id = btn.dataset.item;
+            let formData = new FormData(form);
+            let titulo = formData.get("inputTitulo");
+            let subtitulo = formData.get("inputSubtitulo");
+            let descripcion = formData.get("description-table");
+            let checkbox = checkboxTable.checked;
+            if (titulo !== "" && subtitulo !== "" && descripcion !== "") {
+                let nuevaInformacion = {
+                    titulo: titulo,
+                    subtitulo: subtitulo,
+                    descripcion: descripcion,
+                    destacado: checkbox,
+                };
+
+                let configuracion = {
+                    method: "PUT",
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify(nuevaInformacion),
+                };
+
+                try {
+                    let response = await fetch(`${url}/${id}`, configuracion);
+                    if (response.status == 200) {
+                        advertencia.classList.remove("ocultar");
+                        advertencia.innerHTML =
+                            "La noticia " + id + " se ha editado!";
+                        setTimeout(() => {
+                            advertencia.classList.add("ocultar");
+                        }, 8000);
+                    } else {
+                        advertencia.innerHTML = "No se pudo editar la tabla.";
+                    }
+                    mostrarInformacion();
+                } catch (error) {
+                    console.log(
+                        "Error al intentar borrar el registro: " + error
+                    );
+                }
+            }
+        });
+    });
+}
 
 async function mostrarInformacion() {
     containerTable.innerHTML = `
@@ -122,8 +188,7 @@ async function mostrarInformacion() {
         </td
 
         <td></td>
-    </tr>
-    </div>`;
+    </tr>`;
     try {
         let respuesta = await fetch(url);
         if (respuesta.ok) {
@@ -136,6 +201,10 @@ async function mostrarInformacion() {
                         <td class="es-importante">${renglon.titulo}</td>
                         <td class="es-importante">${renglon.subtitulo}</td>
                         <td class="es-importante">${renglon.descripcion}</td>
+                        <td class="es-importante">
+                            <button class="btn1 btn-editar" data-item="${renglon.id}"><i class="bi bi-pencil-square"></i> Editar</button>
+                            <button class="btn1 btn-eliminar" data-item="${renglon.id}"><i class="bi bi-trash"></i>Eliminar</button>
+                        </td>
                     </tr>
                     `;
                     containerTable.innerHTML += elementosImportantes;
@@ -145,11 +214,17 @@ async function mostrarInformacion() {
                         <td>${renglon.titulo}</td>
                         <td>${renglon.subtitulo}</td>
                         <td>${renglon.descripcion}</td>
+                        <td>
+                            <button class="btn1 btn-editar" data-item="${renglon.id}"><i class="bi bi-pencil-square"></i> Editar</button>
+                            <button class="btn1 btn-eliminar" data-item="${renglon.id}"><i class="bi bi-trash"></i> Eliminar</button>
+                        </td>
                     </tr>
                     `;
                     containerTable.innerHTML += elementos;
                 }
             }
+            eliminarElementos();
+            editarElementos();
         } else {
             console.log("error");
         }
