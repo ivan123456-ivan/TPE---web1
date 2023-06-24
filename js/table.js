@@ -136,13 +136,14 @@ function editarElementos() {
         btn.addEventListener("click", async (e) => {
             e.preventDefault();
             let id = btn.dataset.item;
-            btn.textContent = "✅ Confirmar";
+            btn.textContent = "Cargando...";
             try {
                 let response = await fetch(`${URL_API}/${id}`);
                 let data = await response.json();
                 inputTitulo.value = data.titulo;
                 inputSubtitulo.value = data.subtitulo;
                 inputDescripcion.value = data.descripcion;
+                btn.textContent = "✅ Confirmar";
             } catch (error) {
                 console.log(error);
             }
