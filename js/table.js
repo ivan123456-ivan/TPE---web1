@@ -3,10 +3,12 @@
 let containerTable = document.querySelector("#tbody-tabla");
 let btnGenerarItems = document.querySelector("#btn-generar-items-tabla");
 let checkboxTable = document.querySelector("#checkbox-form");
+let inputTitulo = document.querySelector("#inputTitulo");
+let inputSubtitulo = document.querySelector("#inputSubtitulo");
 let inputDescripcion = document.querySelector("#description-table");
 let form = document.querySelector("#form");
 let advertencia = document.querySelector("#advertencia");
-const url = "https://6488ed330e2469c038fe83a4.mockapi.io/news/noticias";
+const URL_API = "https://6488ed330e2469c038fe83a4.mockapi.io/news/noticias";
 inputDescripcion.value = "";
 mostrarInformacion();
 
@@ -34,13 +36,14 @@ form.addEventListener("submit", async (e) => {
         };
 
         try {
-            let respuesta = await fetch(url, configuracion);
+            let respuesta = await fetch(URL_API, configuracion);
             if (respuesta.status === 201) {
                 advertencia.classList.remove("ocultar");
                 advertencia.innerHTML = "Noticia generada correctamente!";
                 setTimeout(() => {
                     advertencia.classList.add("ocultar");
                 }, 8000);
+                vaciarInputs();
                 mostrarInformacion();
             } else {
                 advertencia.innerHTML = "No se pudo crear el nuevo elemento.";
@@ -76,7 +79,7 @@ btnGenerarItems.addEventListener("click", async (e) => {
 
     try {
         for (let i = 1; i <= 3; i++) {
-            let respuesta = await fetch(url, configuracion);
+            let respuesta = await fetch(URL_API, configuracion);
             if (respuesta.status == 201) {
                 advertencia.classList.remove("ocultar");
                 advertencia.innerHTML = "Items generados correctamente!";
@@ -107,7 +110,7 @@ function eliminarElementos() {
                 },
             };
             try {
-                let response = await fetch(`${url}/${id}`, configuracion);
+                let response = await fetch(`${URL_API}/${id}`, configuracion);
                 if (response.status == 200) {
                     advertencia.classList.remove("ocultar");
                     advertencia.innerHTML =
@@ -115,6 +118,7 @@ function eliminarElementos() {
                     setTimeout(() => {
                         advertencia.classList.add("ocultar");
                     }, 8000);
+                    vaciarInputs();
                 } else {
                     advertencia.innerHTML = "No se pudo eliminar la tabla.";
                 }
@@ -127,17 +131,29 @@ function eliminarElementos() {
 }
 
 function editarElementos() {
-    let btnsBorrar = document.querySelectorAll(".btn-editar");
-    btnsBorrar.forEach((btn) => {
+    let btnsEditar = document.querySelectorAll(".btn-editar");
+    btnsEditar.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
             e.preventDefault();
             let id = btn.dataset.item;
-            let formData = new FormData(form);
-            let titulo = formData.get("inputTitulo");
-            let subtitulo = formData.get("inputSubtitulo");
-            let descripcion = formData.get("description-table");
-            let checkbox = checkboxTable.checked;
-            if (titulo !== "" && subtitulo !== "" && descripcion !== "") {
+            btn.textContent = "✅ Confirmar";
+            try {
+                let response = await fetch(`${URL_API}/${id}`);
+                let data = await response.json();
+                inputTitulo.value = data.titulo;
+                inputSubtitulo.value = data.subtitulo;
+                inputDescripcion.value = data.descripcion;
+            } catch (error) {
+                console.log(error);
+            }
+            btn.addEventListener("click", async (e) => {
+                e.preventDefault();
+                let formData = new FormData(form);
+                let titulo = formData.get("inputTitulo");
+                let subtitulo = formData.get("inputSubtitulo");
+                let descripcion = formData.get("description-table");
+                let checkbox = checkboxTable.checked;
+
                 let nuevaInformacion = {
                     titulo: titulo,
                     subtitulo: subtitulo,
@@ -154,7 +170,10 @@ function editarElementos() {
                 };
 
                 try {
-                    let response = await fetch(`${url}/${id}`, configuracion);
+                    let response = await fetch(
+                        `${URL_API}/${id}`,
+                        configuracion
+                    );
                     if (response.status == 200) {
                         advertencia.classList.remove("ocultar");
                         advertencia.innerHTML =
@@ -162,6 +181,7 @@ function editarElementos() {
                         setTimeout(() => {
                             advertencia.classList.add("ocultar");
                         }, 8000);
+                        vaciarInputs();
                     } else {
                         advertencia.innerHTML = "No se pudo editar la tabla.";
                     }
@@ -171,7 +191,7 @@ function editarElementos() {
                         "Error al intentar borrar el registro: " + error
                     );
                 }
-            }
+            });
         });
     });
 }
@@ -192,7 +212,7 @@ async function mostrarInformacion() {
         <td></td>
     </tr>`;
     try {
-        let respuesta = await fetch(url);
+        let respuesta = await fetch(URL_API);
         if (respuesta.ok) {
             let data = await respuesta.json();
             containerTable.innerHTML = "";
@@ -233,4 +253,10 @@ async function mostrarInformacion() {
     } catch (error) {
         console.log(error);
     }
+}
+
+function vaciarInputs() {
+    inputTitulo.value = "";
+    inputSubtitulo.value = "";
+    inputDescripcion.value = "";
 }
