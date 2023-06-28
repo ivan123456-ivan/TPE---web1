@@ -6,6 +6,8 @@ btnNav.addEventListener("click", () => {
     navbar.classList.toggle("nav-mostrar");
     btnNav.classList.toggle("bi-x-circle");
 });
+;
+
 
 let ubicacionPrincipal = window.pageYOffset;
 window.onscroll = function () {
