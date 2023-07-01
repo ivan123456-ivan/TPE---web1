@@ -18,7 +18,7 @@ let informacionTable = [
     },
 ];
 
-mostrar_tabla(0);
+mostrarInformacion();
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ form.addEventListener("submit", (e) => {
         subtitulo.trim() != "" &&
         descripcion.trim() != ""
     ) {
-        containerTable.innerHTML = " ";
+        containerTable.textContent = " ";
         let nuevaInformacion = {
             titulo: titulo,
             subtitulo: subtitulo,
@@ -40,9 +40,6 @@ form.addEventListener("submit", (e) => {
         };
         informacionTable.push(nuevaInformacion);
         mostrarInformacion();
-        titulo = "";
-        subtitulo = "";
-        descripcion = "";
         advertencia.classList.add("ocultar");
     } else {
         advertencia.classList.remove("ocultar");
@@ -66,14 +63,14 @@ btnGenerarItems.addEventListener("click", (e) => {
         informacionTable.push(item1);
     }
 
-    containerTable.innerHTML = " ";
+    containerTable.textContent = " ";
 
     mostrarInformacion();
 });
 
 btnBorrarTable.addEventListener("click", (e) => {
     e.preventDefault();
-    containerTable.innerHTML = " ";
+    containerTable.textContent = " ";
     informacionTable = [
         {
             titulo: "Este es un titulo",
@@ -81,41 +78,25 @@ btnBorrarTable.addEventListener("click", (e) => {
             descripcion: "Esta es una descripcion",
         },
     ];
-    mostrar_tabla(0);
+    mostrarInformacion();
 });
 
-function mostrar_tabla(sub) {
-    let tr = document.createElement("tr");
-    let tdTitulo = document.createElement("td");
-    let tdSubtitulo = document.createElement("td");
-    let tdDescripcion = document.createElement("td");
-    containerTable.appendChild(tr);
-    tr.append(tdTitulo, tdSubtitulo, tdDescripcion);
-    tdTitulo.textContent = `${informacionTable[sub].titulo}`;
-    tdSubtitulo.textContent = `${informacionTable[sub].subtitulo}`;
-    tdDescripcion.textContent = `${informacionTable[sub].descripcion}`;
-}
-
-function mostrar_destacado(sub) {
-    let tr = document.createElement("tr");
-    let tdTitulo = document.createElement("td");
-    let tdSubtitulo = document.createElement("td");
-    let tdDescripcion = document.createElement("td");
-    containerTable.appendChild(tr);
-    tr.append(tdTitulo, tdSubtitulo, tdDescripcion);
-    tdTitulo.textContent = `${informacionTable[sub].titulo}`;
-    tdSubtitulo.textContent = `${informacionTable[sub].subtitulo}`;
-    tdDescripcion.textContent = `${informacionTable[sub].descripcion}`;
-    tdTitulo.classList.add("es-importante");
-    tdSubtitulo.classList.add("es-importante");
-    tdDescripcion.classList.add("es-importante");
-}
 function mostrarInformacion() {
-    for (let j = 0; j < informacionTable.length; j++) {
-        if (informacionTable[j].destacado === true) {
-            mostrar_destacado(j);
-        } else {
-            mostrar_tabla(j);
+    containerTable.textContent = "";
+    for (let elemento of informacionTable) {
+        let tr = document.createElement("tr");
+        let tdTitulo = document.createElement("td");
+        let tdSubtitulo = document.createElement("td");
+        let tdDescripcion = document.createElement("td");
+        if (elemento.destacado === true) {
+            tdTitulo.classList.add("es-importante");
+            tdSubtitulo.classList.add("es-importante");
+            tdDescripcion.classList.add("es-importante");
         }
+        tdTitulo.textContent = elemento.titulo;
+        tdSubtitulo.textContent = elemento.subtitulo;
+        tdDescripcion.textContent = elemento.descripcion;
+        tr.append(tdTitulo, tdSubtitulo, tdDescripcion);
+        containerTable.appendChild(tr);
     }
 }
