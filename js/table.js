@@ -198,32 +198,28 @@ async function mostrarInformacion() {
                     botonera.classList.add("es-importante");
 
                     //boton editar
-                    let btn1 = document.createElement("button");
-                    btn1.classList.add("btn1", "btn-editar");
-                    btn1.setAttribute("data-item", `${renglon.id}`);
-                    btn1.textContent = "Editar ";
-                    let i1 = document.createElement("i");
-                    i1.classList.add("bi", "bi-pencil-square");
-                    btn1.appendChild(i1);
+                    let btnEditar = document.createElement("button");
+                    btnEditar.classList.add("btn1", "btn-editar");
+                    btnEditar.setAttribute("data-item", `${renglon.id}`);
+                    btnEditar.textContent = "Editar ";
+                    let iconoEditar = document.createElement("i");
+                    iconoEditar.classList.add("bi", "bi-pencil-square");
+                    btnEditar.appendChild(iconoEditar);
 
                     //boton eliminar
-                    let btn2 = document.createElement("button");
-                    btn2.classList.add("btn1", "btn-eliminar");
-                    btn2.textContent = "Eliminar ";
-                    let i2 = document.createElement("i");
-                    i2.classList.add("bi", "bi-trash");
-                    btn2.appendChild(i2);
-                    btn2.setAttribute("data-item", `${renglon.id}`);
+                    let btnEliminar = document.createElement("button");
+                    btnEliminar.classList.add("btn1", "btn-eliminar");
+                    btnEliminar.textContent = "Eliminar ";
+                    let iconoEliminar = document.createElement("i");
+                    iconoEliminar.classList.add("bi", "bi-trash");
+                    btnEliminar.appendChild(iconoEliminar);
+                    btnEliminar.setAttribute("data-item", `${renglon.id}`);
 
-                    botonera.appendChild(btn1);
-                    botonera.appendChild(btn2);
+                    botonera.append(btnEditar, btnEliminar);
 
                     //creacion de la fila y sus elementos
 
-                    tr.appendChild(titulo);
-                    tr.appendChild(subtitulo);
-                    tr.appendChild(descripcion);
-                    tr.appendChild(botonera);
+                    tr.append(titulo, subtitulo, descripcion, botonera);
                     containerTable.appendChild(tr);
                 } else {
                     // let elementos = `
@@ -250,32 +246,28 @@ async function mostrarInformacion() {
                     let botonera = document.createElement("td");
 
                     //boton editar
-                    let btn1 = document.createElement("button");
-                    btn1.classList.add("btn1", "btn-editar");
-                    btn1.setAttribute("data-item", `${renglon.id}`);
-                    btn1.textContent = "Editar ";
-                    let i1 = document.createElement("i");
-                    i1.classList.add("bi", "bi-pencil-square");
-                    btn1.appendChild(i1);
+                    let btnEditar = document.createElement("button");
+                    btnEditar.classList.add("btn1", "btn-editar");
+                    btnEditar.setAttribute("data-item", `${renglon.id}`);
+                    btnEditar.textContent = "Editar ";
+                    let iconoEditar = document.createElement("i");
+                    iconoEditar.classList.add("bi", "bi-pencil-square");
+                    btnEditar.appendChild(iconoEditar);
 
                     //boton eliminar
-                    let btn2 = document.createElement("button");
-                    btn2.classList.add("btn1", "btn-eliminar");
-                    btn2.textContent = "Eliminar ";
-                    let i2 = document.createElement("i");
-                    i2.classList.add("bi", "bi-trash");
-                    btn2.appendChild(i2);
-                    btn2.setAttribute("data-item", `${renglon.id}`);
+                    let btnEliminar = document.createElement("button");
+                    btnEliminar.classList.add("btn1", "btn-eliminar");
+                    btnEliminar.textContent = "Eliminar ";
+                    let iconoEliminar = document.createElement("i");
+                    iconoEliminar.classList.add("bi", "bi-trash");
+                    btnEliminar.appendChild(iconoEliminar);
+                    btnEliminar.setAttribute("data-item", `${renglon.id}`);
 
-                    botonera.appendChild(btn1);
-                    botonera.appendChild(btn2);
+                    botonera.append(btnEditar, btnEliminar);
 
                     //creacion de la fila y sus elementos
 
-                    tr.appendChild(titulo);
-                    tr.appendChild(subtitulo);
-                    tr.appendChild(descripcion);
-                    tr.appendChild(botonera);
+                    tr.append(titulo, subtitulo, descripcion, botonera);
                     containerTable.appendChild(tr);
                 }
             }
