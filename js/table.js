@@ -1,6 +1,7 @@
 "use strict";
 
-let containerTable = document.querySelector("#tbody-tabla");
+let tBody = document.createElement("tbody");
+let container = document.querySelector("#container-table");
 let btnGenerarItems = document.querySelector("#btn-generar-items-tabla");
 let checkboxTable = document.querySelector("#checkbox-form");
 let inputTitulo = document.querySelector("#inputTitulo");
@@ -10,6 +11,26 @@ let form = document.querySelector("#form");
 let advertencia = document.querySelector("#advertencia");
 const URL_API = "https://6488ed330e2469c038fe83a4.mockapi.io/news/noticias";
 inputDescripcion.value = "";
+
+
+let table = document.createElement("table");
+let tHead = document.createElement("thead");
+table.append(tHead, tBody);
+let trTHead = document.createElement("tr");
+tHead.appendChild(trTHead);
+let thTitulo = document.createElement("th");
+let thSubtitulo = document.createElement("th");
+let thDescripcion = document.createElement("th");
+let thOpciones = document.createElement("th");
+ thTitulo.textContent = "Titulo";
+ thSubtitulo.textContent = "Subtitulo";
+ thDescripcion.textContent = "Descripcion";
+ thOpciones.textContent = "Opciones";
+
+trTHead.append(thTitulo, thSubtitulo, thDescripcion, thOpciones);
+container.appendChild(table);
+
+
 mostrarInformacion();
 
 form.addEventListener("submit", async (e) => {
@@ -75,7 +96,7 @@ function eliminarElementos() {
         btn.addEventListener("click", async (e) => {
             e.preventDefault();
             let id = btn.dataset.item;
-            containerTable.innerHTML = " ";
+            tBody.innerHTML = " ";
             let configuracion = metodos("DELETE");
             try {
                 let response = await fetch(`${URL_API}/${id}`, configuracion);
@@ -157,9 +178,10 @@ async function mostrarInformacion() {
 
     //     <td></td>
     // </tr>`;
+
     let containerLoader = document.createElement("div");
     containerLoader.classList.add("container-loader");
-    containerTable.appendChild(containerLoader);
+    tBody.appendChild(containerLoader);
     let loader = document.createElement("div");
     loader.classList.add("loader");
     containerLoader.appendChild(loader);
@@ -167,8 +189,9 @@ async function mostrarInformacion() {
         let respuesta = await fetch(URL_API);
         if (respuesta.ok) {
             let data = await respuesta.json();
-            containerTable.innerHTML = "";
+            tBody.innerHTML = "";
             for (let renglon of data) {
+
                 let tr = document.createElement("tr");
                 let titulo = document.createElement("td");
                 let subtitulo = document.createElement("td");
@@ -178,7 +201,8 @@ async function mostrarInformacion() {
                 let iconoEditar = document.createElement("i");
                 let btnEliminar = document.createElement("button");
                 let iconoEliminar = document.createElement("i");
-                 // creacion de fila de noticia
+                // creacion de fila de noticia
+
                 titulo.textContent = renglon.titulo;
                 subtitulo.textContent = renglon.subtitulo;
                 descripcion.textContent = renglon.descripcion;
@@ -195,47 +219,46 @@ async function mostrarInformacion() {
                 btnEliminar.classList.add("btn1", "btn-eliminar");
                 iconoEliminar.classList.add("bi", "bi-trash");
                 btnEliminar.textContent = "Eliminar ";
-            
+
                 btnEliminar.appendChild(iconoEliminar);
                 btnEliminar.setAttribute("data-item", `${renglon.id}`);
                 botonera.append(btnEditar, btnEliminar);
 
                 //creacion de la fila y sus elementos
-
                 tr.append(titulo, subtitulo, descripcion, botonera);
-                containerTable.appendChild(tr);
+                tBody.appendChild(tr);
 
-                esNoticiaDestacada(renglon, titulo, subtitulo, descripcion,  botonera);
+                esNoticiaDestacada(renglon, titulo, subtitulo, descripcion, botonera);
 
-                    // let elementosImportantes = `
-                    // <tr>
-                    //     <td class="es-importante">${renglon.titulo}</td>
-                    //     <td class="es-importante">${renglon.subtitulo}</td>
-                    //     <td class="es-importante">${renglon.descripcion}</td>
-                    //     <td class="es-importante">
-                    //         <button class="btn1 btn-editar" data-item="${renglon.id}"><i class="bi bi-pencil-square"></i> Editar</button>
-                    //         <button class="btn1 btn-eliminar" data-item="${renglon.id}"><i class="bi bi-trash"></i>Eliminar</button>
-                    //     </td>
-                    // </tr>
-                    // `;
-                    // creacion de fila de noticia
-                  
-
-                
+                // let elementosImportantes = `
+                // <tr>
+                //     <td class="es-importante">${renglon.titulo}</td>
+                //     <td class="es-importante">${renglon.subtitulo}</td>
+                //     <td class="es-importante">${renglon.descripcion}</td>
+                //     <td class="es-importante">
+                //         <button class="btn1 btn-editar" data-item="${renglon.id}"><i class="bi bi-pencil-square"></i> Editar</button>
+                //         <button class="btn1 btn-eliminar" data-item="${renglon.id}"><i class="bi bi-trash"></i>Eliminar</button>
+                //     </td>
+                // </tr>
+                // `;
+                // creacion de fila de noticia
 
 
-                    // let elementos = `
-                    // <tr>
-                    //     <td>${renglon.titulo}</td>
-                    //     <td>${renglon.subtitulo}</td>
-                    //     <td>${renglon.descripcion}</td>
-                    //     <td>
-                    //         <button class="btn1 btn-editar" data-item="${renglon.id}"><i class="bi bi-pencil-square"></i> Editar</button>
-                    //         <button class="btn1 btn-eliminar" data-item="${renglon.id}"><i class="bi bi-trash"></i> Eliminar</button>
-                    //     </td>
-                    // </tr>
-                    // `;
-                    // creacion de fila de noticia
+
+
+
+                // let elementos = `
+                // <tr>
+                //     <td>${renglon.titulo}</td>
+                //     <td>${renglon.subtitulo}</td>
+                //     <td>${renglon.descripcion}</td>
+                //     <td>
+                //         <button class="btn1 btn-editar" data-item="${renglon.id}"><i class="bi bi-pencil-square"></i> Editar</button>
+                //         <button class="btn1 btn-eliminar" data-item="${renglon.id}"><i class="bi bi-trash"></i> Eliminar</button>
+                //     </td>
+                // </tr>
+                // `;
+                // creacion de fila de noticia
 
             }
             eliminarElementos();
@@ -254,7 +277,7 @@ function vaciarInputs() {
     inputDescripcion.value = "";
 }
 
-function esNoticiaDestacada(renglon, titulo, subtitulo, descripcion,  botonera) {
+function esNoticiaDestacada(renglon, titulo, subtitulo, descripcion, botonera) {
     if (renglon.destacado) {
         titulo.classList.add("es-importante");
         subtitulo.classList.add("es-importante");

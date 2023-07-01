@@ -1,127 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Diario + crear idea de noticia</title>
-        <link rel="stylesheet" href="../css/style.css" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario + crear idea de noticia</title>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
 
-    <body>
-        <header>
-            <i class="bi bi-list btn" id="btn-nav"></i>
-            <div class="logo">
-                <h1>El Diario +</h1>
-            </div>
-            <div>
-                <p class="eslogan">tu portal de noticias.</p>
-            </div>
-            <div class="escarapela-container">
-                <div class="escarapela-capa-1">
-                    <div class="escarapela-capa-2">
-                        <div class="escarapela-capa-3"></div>
-                    </div>
+<body>
+    <header>
+        <i class="bi bi-list btn" id="btn-nav"></i>
+        <div class="logo">
+            <h1>El Diario +</h1>
+        </div>
+        <div>
+            <p class="eslogan">tu portal de noticias.</p>
+        </div>
+        <div class="escarapela-container">
+            <div class="escarapela-capa-1">
+                <div class="escarapela-capa-2">
+                    <div class="escarapela-capa-3"></div>
                 </div>
             </div>
-            <nav>
-                <ul class="nav">
-                    <li type="menu" class="btn-header">
-                        <a href="index.html">Home<i class="bi bi-house"> </i></a>
-                    </li>
-                    <li type="menu" class="btn-header">
-                        <a href="ultimas-noticias.html">Ultimas Noticias
-                            <i class="bi bi-exclamation-diamond"> </i></a>
-                    </li>
-
-                    <li type="menu" class="btn-header">
-                        <a href="categorias.html">Categorías <i
-                                class="bi bi-bookmark"> </i></a>
-                    </li>
-                    <li type="menu" class="btn-header">
-                        <a href="crear-tabla-noticia.html">Idea de noticia
-                            <i class="bi bi-lightbulb"> </i></a>
-                    </li>
-                    <li type="menu" class="btn-header">
-                        <a href="contacto.html">Contacto <i
-                                class="bi bi-telephone"> </i></a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <ul class="container-redes">
-            <li class="redes">
-                <a href="#"><i class="bi bi-twitch"></i></a>
-            </li>
-            <li class="redes">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-            </li>
-            <li class="redes">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-            </li>
-            <li class="redes">
-                <a href="#"><i class="bi bi-messenger"></i></a>
-            </li>
-            <li class="redes">
-                <a href="https://api.whatsapp.com/send?phone=2494696975"
-                    target="_blank"><i class="bi bi-whatsapp"></i></a>
-            </li>
-        </ul>
-
-        <div class="main separador">
-            <div class="container-form-table">
-                <form action id="form" class="form-table">
-                    <input type="text" class="input-table" name="inputTitulo"
-                        id="inputTitulo"
-                        placeholder="Titulo" required>
-                    <input type="text" class="input-table" name="inputSubtitulo"
-                        id="inputSubtitulo"
-                        placeholder="Subtitulo" required>
-                    <textarea name="description-table" id="description-table"
-                        class="description-table"
-                        placeholder="Descripcion"
-                        cols="30" rows="10" required>
-                    </textarea>
-                    <div class="botones-table">
-                        <button type="submit" class="btn1" id="btn-enviar-tabla">Enviar</button>
-                        <button type="submit" class="btn1"
-                            id="btn-generar-items-tabla">Generar
-                            Items
-                        </button>
-                        <p>Seleccione si es una noticia
-                            importante.</p>
-                        <input type="checkbox" id="checkbox-form">
-                        <div class="advertencia ocultar" id="advertencia">
-                            <p>Debe completar todos los campos</p>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="container-table" id="container-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Titulo</th>
-                            <th>Subtitulo</th>
-                            <th>Descripcion</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody-tabla">
-
-                    </tbody>
-                </table>
-            </div>
         </div>
-        <footer class="division footer">
-            <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
-        </footer>
+        <nav>
+            <ul class="nav">
+                <li type="menu" class="btn-header">
+                    <a href="index.html">Home<i class="bi bi-house"> </i></a>
+                </li>
+                <li type="menu" class="btn-header">
+                    <a href="ultimas-noticias.html">Ultimas Noticias
+                        <i class="bi bi-exclamation-diamond"> </i></a>
+                </li>
 
-        <script src="../js/main.js"></script>
-        <script src="../js/table.js"></script>
-    </body>
+                <li type="menu" class="btn-header">
+                    <a href="categorias.html">Categorías <i class="bi bi-bookmark"> </i></a>
+                </li>
+                <li type="menu" class="btn-header">
+                    <a href="crear-tabla-noticia.html">Idea de noticia
+                        <i class="bi bi-lightbulb"> </i></a>
+                </li>
+                <li type="menu" class="btn-header">
+                    <a href="contacto.html">Contacto <i class="bi bi-telephone"> </i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <ul class="container-redes">
+        <li class="redes">
+            <a href="#"><i class="bi bi-twitch"></i></a>
+        </li>
+        <li class="redes">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+        </li>
+        <li class="redes">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+        </li>
+        <li class="redes">
+            <a href="#"><i class="bi bi-messenger"></i></a>
+        </li>
+        <li class="redes">
+            <a href="https://api.whatsapp.com/send?phone=2494696975" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </li>
+    </ul>
+
+    <div class="main separador">
+        <div class="container-form-table">
+            <form action id="form" class="form-table">
+                <input type="text" class="input-table" name="inputTitulo" id="inputTitulo" placeholder="Titulo"
+                    required>
+                <input type="text" class="input-table" name="inputSubtitulo" id="inputSubtitulo" placeholder="Subtitulo"
+                    required>
+                <textarea name="description-table" id="description-table" class="description-table"
+                    placeholder="Descripcion" cols="30" rows="10" required>
+                    </textarea>
+                <div class="botones-table">
+                    <button type="submit" class="btn1" id="btn-enviar-tabla">Enviar</button>
+                    <button type="submit" class="btn1" id="btn-generar-items-tabla">Generar
+                        Items
+                    </button>
+                    <p>Seleccione si es una noticia
+                        importante.</p>
+                    <input type="checkbox" id="checkbox-form">
+                    <div class="advertencia ocultar" id="advertencia">
+                        <p>Debe completar todos los campos</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="container-table" id="container-table">
+
+        </div>
+    </div>
+    <footer class="division footer">
+        <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/table.js"></script>
+</body>
 
 </html>
