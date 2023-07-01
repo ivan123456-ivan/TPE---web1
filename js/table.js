@@ -169,7 +169,44 @@ async function mostrarInformacion() {
             let data = await respuesta.json();
             containerTable.innerHTML = "";
             for (let renglon of data) {
-                if (renglon.destacado === true) {
+                let tr = document.createElement("tr");
+                let titulo = document.createElement("td");
+                let subtitulo = document.createElement("td");
+                let descripcion = document.createElement("td");
+                let botonera = document.createElement("td");
+                let btnEditar = document.createElement("button");
+                let iconoEditar = document.createElement("i");
+                let btnEliminar = document.createElement("button");
+                let iconoEliminar = document.createElement("i");
+                 // creacion de fila de noticia
+                titulo.textContent = renglon.titulo;
+                subtitulo.textContent = renglon.subtitulo;
+                descripcion.textContent = renglon.descripcion;
+                // botonera
+
+                //boton editar
+                btnEditar.classList.add("btn1", "btn-editar");
+                btnEditar.setAttribute("data-item", `${renglon.id}`);
+                btnEditar.textContent = "Editar ";
+                iconoEditar.classList.add("bi", "bi-pencil-square");
+                btnEditar.appendChild(iconoEditar);
+
+                //boton eliminar
+                btnEliminar.classList.add("btn1", "btn-eliminar");
+                iconoEliminar.classList.add("bi", "bi-trash");
+                btnEliminar.textContent = "Eliminar ";
+            
+                btnEliminar.appendChild(iconoEliminar);
+                btnEliminar.setAttribute("data-item", `${renglon.id}`);
+                botonera.append(btnEditar, btnEliminar);
+
+                //creacion de la fila y sus elementos
+
+                tr.append(titulo, subtitulo, descripcion, botonera);
+                containerTable.appendChild(tr);
+
+                esNoticiaDestacada(renglon, titulo, subtitulo, descripcion,  botonera);
+
                     // let elementosImportantes = `
                     // <tr>
                     //     <td class="es-importante">${renglon.titulo}</td>
@@ -182,46 +219,11 @@ async function mostrarInformacion() {
                     // </tr>
                     // `;
                     // creacion de fila de noticia
-                    let tr = document.createElement("tr");
-                    let titulo = document.createElement("td");
-                    titulo.textContent = renglon.titulo;
-                    titulo.classList.add("es-importante");
-                    let subtitulo = document.createElement("td");
-                    subtitulo.textContent = renglon.subtitulo;
-                    subtitulo.classList.add("es-importante");
-                    let descripcion = document.createElement("td");
-                    descripcion.textContent = renglon.descripcion;
-                    descripcion.classList.add("es-importante");
+                  
 
-                    // botonera
-                    let botonera = document.createElement("td");
-                    botonera.classList.add("es-importante");
+                
 
-                    //boton editar
-                    let btnEditar = document.createElement("button");
-                    btnEditar.classList.add("btn1", "btn-editar");
-                    btnEditar.setAttribute("data-item", `${renglon.id}`);
-                    btnEditar.textContent = "Editar ";
-                    let iconoEditar = document.createElement("i");
-                    iconoEditar.classList.add("bi", "bi-pencil-square");
-                    btnEditar.appendChild(iconoEditar);
 
-                    //boton eliminar
-                    let btnEliminar = document.createElement("button");
-                    btnEliminar.classList.add("btn1", "btn-eliminar");
-                    btnEliminar.textContent = "Eliminar ";
-                    let iconoEliminar = document.createElement("i");
-                    iconoEliminar.classList.add("bi", "bi-trash");
-                    btnEliminar.appendChild(iconoEliminar);
-                    btnEliminar.setAttribute("data-item", `${renglon.id}`);
-
-                    botonera.append(btnEditar, btnEliminar);
-
-                    //creacion de la fila y sus elementos
-
-                    tr.append(titulo, subtitulo, descripcion, botonera);
-                    containerTable.appendChild(tr);
-                } else {
                     // let elementos = `
                     // <tr>
                     //     <td>${renglon.titulo}</td>
@@ -234,42 +236,7 @@ async function mostrarInformacion() {
                     // </tr>
                     // `;
                     // creacion de fila de noticia
-                    let tr = document.createElement("tr");
-                    let titulo = document.createElement("td");
-                    titulo.textContent = renglon.titulo;
-                    let subtitulo = document.createElement("td");
-                    subtitulo.textContent = renglon.subtitulo;
-                    let descripcion = document.createElement("td");
-                    descripcion.textContent = renglon.descripcion;
 
-                    // botonera
-                    let botonera = document.createElement("td");
-
-                    //boton editar
-                    let btnEditar = document.createElement("button");
-                    btnEditar.classList.add("btn1", "btn-editar");
-                    btnEditar.setAttribute("data-item", `${renglon.id}`);
-                    btnEditar.textContent = "Editar ";
-                    let iconoEditar = document.createElement("i");
-                    iconoEditar.classList.add("bi", "bi-pencil-square");
-                    btnEditar.appendChild(iconoEditar);
-
-                    //boton eliminar
-                    let btnEliminar = document.createElement("button");
-                    btnEliminar.classList.add("btn1", "btn-eliminar");
-                    btnEliminar.textContent = "Eliminar ";
-                    let iconoEliminar = document.createElement("i");
-                    iconoEliminar.classList.add("bi", "bi-trash");
-                    btnEliminar.appendChild(iconoEliminar);
-                    btnEliminar.setAttribute("data-item", `${renglon.id}`);
-
-                    botonera.append(btnEditar, btnEliminar);
-
-                    //creacion de la fila y sus elementos
-
-                    tr.append(titulo, subtitulo, descripcion, botonera);
-                    containerTable.appendChild(tr);
-                }
             }
             eliminarElementos();
             editarElementos();
@@ -287,9 +254,19 @@ function vaciarInputs() {
     inputDescripcion.value = "";
 }
 
+function esNoticiaDestacada(renglon, titulo, subtitulo, descripcion,  botonera) {
+    if (renglon.destacado) {
+        titulo.classList.add("es-importante");
+        subtitulo.classList.add("es-importante");
+        descripcion.classList.add("es-importante");
+        botonera.classList.add("es-importante");
+    }
+}
+
+
 function metodos(metodo, nuevaInformacion) {
     let configuracion;
-    if(metodo === "POST" || "PUT"){
+    if (metodo === "POST" || "PUT") {
         configuracion = {
             method: metodo,
             headers: {
@@ -298,7 +275,7 @@ function metodos(metodo, nuevaInformacion) {
             body: JSON.stringify(nuevaInformacion),
         };
     }
-    if(metodo === "DELETE"){
+    if (metodo === "DELETE") {
         configuracion = {
             method: metodo,
             headers: {
@@ -318,7 +295,7 @@ function respuestasAdvertencias(response, mensaje, mensajeError) {
             advertencia.classList.add("ocultar");
         }, 8000);
         vaciarInputs();
-        if(response.status === 201){
+        if (response.status === 201) {
             mostrarInformacion();
         }
     } else {
