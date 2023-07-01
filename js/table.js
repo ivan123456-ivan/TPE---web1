@@ -27,27 +27,13 @@ form.addEventListener("submit", async (e) => {
             destacado: checkbox,
         };
 
-        let configuracion = {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(nuevaInformacion),
-        };
+        let configuracion = metodos("POST", nuevaInformacion);
 
         try {
             let respuesta = await fetch(URL_API, configuracion);
-            if (respuesta.status === 201) {
-                advertencia.classList.remove("ocultar");
-                advertencia.innerHTML = "Noticia generada correctamente!";
-                setTimeout(() => {
-                    advertencia.classList.add("ocultar");
-                }, 8000);
-                vaciarInputs();
-                mostrarInformacion();
-            } else {
-                advertencia.innerHTML = "No se pudo crear el nuevo elemento.";
-            }
+            let mensaje = "Noticia generada correctamente!";
+            let mensajeError = "No se pudo crear el nuevo elemento.";
+            respuestasAdvertencias(respuesta, mensaje, mensajeError);
         } catch (error) {
             console.log(error);
         }
@@ -69,26 +55,13 @@ btnGenerarItems.addEventListener("click", async (e) => {
         destacado: checkboxTable.checked,
     };
 
-    let configuracion = {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json",
-        },
-        body: JSON.stringify(item),
-    };
-
+    let configuracion = metodos("POST", item);
     try {
         for (let i = 1; i <= 3; i++) {
             let respuesta = await fetch(URL_API, configuracion);
-            if (respuesta.status == 201) {
-                advertencia.classList.remove("ocultar");
-                advertencia.innerHTML = "Items generados correctamente!";
-                setTimeout(() => {
-                    advertencia.classList.add("ocultar");
-                }, 8000);
-            } else {
-                advertencia.innerHTML = "No se pudo crear el nuevo elemento.";
-            }
+            let mensaje = "Items generados correctamente!";
+            let mensajeError = "No se pudo crear el nuevo elemento.";
+            respuestasAdvertencias(respuesta, mensaje, mensajeError);
         }
         mostrarInformacion();
     } catch (error) {
@@ -103,25 +76,12 @@ function eliminarElementos() {
             e.preventDefault();
             let id = btn.dataset.item;
             containerTable.innerHTML = " ";
-            let configuracion = {
-                method: "DELETE",
-                headers: {
-                    "Content-type": "application/json",
-                },
-            };
+            let configuracion = metodos("DELETE");
             try {
                 let response = await fetch(`${URL_API}/${id}`, configuracion);
-                if (response.status == 200) {
-                    advertencia.classList.remove("ocultar");
-                    advertencia.innerHTML =
-                        "La noticia " + id + " se ha eliminado!";
-                    setTimeout(() => {
-                        advertencia.classList.add("ocultar");
-                    }, 8000);
-                    vaciarInputs();
-                } else {
-                    advertencia.innerHTML = "No se pudo eliminar la tabla.";
-                }
+                let mensaje = "La noticia " + id + " se ha eliminado!";
+                let mensajeError = "No se pudo eliminar la tabla.";
+                respuestasAdvertencias(response, mensaje, mensajeError);
                 mostrarInformacion();
             } catch (error) {
                 console.log("Error al intentar borrar el registro: ", error);
@@ -162,30 +122,15 @@ function editarElementos() {
                     destacado: checkbox,
                 };
 
-                let configuracion = {
-                    method: "PUT",
-                    headers: {
-                        "Content-type": "application/json",
-                    },
-                    body: JSON.stringify(nuevaInformacion),
-                };
-
+                let configuracion = metodos("PUT", nuevaInformacion);
                 try {
                     let response = await fetch(
                         `${URL_API}/${id}`,
                         configuracion
                     );
-                    if (response.status == 200) {
-                        advertencia.classList.remove("ocultar");
-                        advertencia.innerHTML =
-                            "La noticia " + id + " se ha editado!";
-                        setTimeout(() => {
-                            advertencia.classList.add("ocultar");
-                        }, 8000);
-                        vaciarInputs();
-                    } else {
-                        advertencia.innerHTML = "No se pudo editar la tabla.";
-                    }
+                    let mensaje = "La noticia " + id + " se ha editado!";
+                    let mensajeError = "No se pudo editar la tabla.";
+                    respuestasAdvertencias(response, mensaje, mensajeError);
                     mostrarInformacion();
                 } catch (error) {
                     console.log(
@@ -348,4 +293,44 @@ function vaciarInputs() {
     inputTitulo.value = "";
     inputSubtitulo.value = "";
     inputDescripcion.value = "";
+}
+
+function metodos(metodo, nuevaInformacion) {
+    let configuracion;
+    if(metodo === "POST" || "PUT"){
+        configuracion = {
+            method: metodo,
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(nuevaInformacion),
+        };
+    }
+    if(metodo === "DELETE"){
+        configuracion = {
+            method: metodo,
+            headers: {
+                "Content-type": "application/json",
+            },
+        };
+    }
+    return configuracion;
+}
+
+function respuestasAdvertencias(response, mensaje, mensajeError) {
+
+    if (response.status === 200 || 201) {
+        advertencia.classList.remove("ocultar");
+        advertencia.textContent = mensaje;
+        setTimeout(() => {
+            advertencia.classList.add("ocultar");
+        }, 8000);
+        vaciarInputs();
+        if(response.status === 201){
+            mostrarInformacion();
+        }
+    } else {
+        advertencia.textContent = mensajeError;
+    }
+
 }
