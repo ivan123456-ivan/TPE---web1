@@ -5,12 +5,10 @@ let btnEnviarTable = document.querySelector("#btn-enviar-tabla");
 let btnGenerarItems = document.querySelector("#btn-generar-items-tabla");
 let btnBorrarTable = document.querySelector("#btn-borrar-tabla");
 let checkboxTable = document.querySelector("#checkbox-form");
-let inputTitulo = document.querySelector("#inputTitulo");
-let inputSubtitulo = document.querySelector("#inputSubtitulo");
 let inputDescripcion = document.querySelector("#description-table");
 let advertencia = document.querySelector("#advertencia");
 inputDescripcion.value = "";
-
+let form = document.querySelector("#form-table");
 let informacionTable = [
     {
         titulo: "Este es un titulo",
@@ -22,25 +20,29 @@ let informacionTable = [
 
 mostrar_tabla(0);
 
-btnEnviarTable.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
+    let formData = new FormData(form);
+    let titulo = formData.get("titulo");
+    let subtitulo = formData.get("subtitulo");
+    let descripcion = formData.get("description-table");
     if (
-        inputTitulo.value != "" &&
-        inputSubtitulo.value != "" &&
-        inputDescripcion.value != ""
+        titulo.trim() != "" &&
+        subtitulo.trim() != "" &&
+        descripcion.trim() != ""
     ) {
         containerTable.innerHTML = " ";
         let nuevaInformacion = {
-            titulo: inputTitulo.value,
-            subtitulo: inputSubtitulo.value,
-            descripcion: inputDescripcion.value,
+            titulo: titulo,
+            subtitulo: subtitulo,
+            descripcion: descripcion,
             destacado: checkboxTable.checked,
         };
         informacionTable.push(nuevaInformacion);
         mostrarInformacion();
-        inputTitulo.value = "";
-        inputSubtitulo.value = "";
-        inputDescripcion.value = "";
+        titulo = "";
+        subtitulo = "";
+        descripcion = "";
         advertencia.classList.add("ocultar");
     } else {
         advertencia.classList.remove("ocultar");
@@ -83,25 +85,30 @@ btnBorrarTable.addEventListener("click", (e) => {
 });
 
 function mostrar_tabla(sub) {
-    let elementos = `  
-    <tr>
-        <td>${informacionTable[sub].titulo}</td>
-        <td>${informacionTable[sub].subtitulo}</td>
-        <td>${informacionTable[sub].descripcion}</td>
-    </tr>
-    `;
-    containerTable.innerHTML += elementos;
+    let tr = document.createElement("tr");
+    let tdTitulo = document.createElement("td");
+    let tdSubtitulo = document.createElement("td");
+    let tdDescripcion = document.createElement("td");
+    containerTable.appendChild(tr);
+    tr.append(tdTitulo, tdSubtitulo, tdDescripcion);
+    tdTitulo.textContent = `${informacionTable[sub].titulo}`;
+    tdSubtitulo.textContent = `${informacionTable[sub].subtitulo}`;
+    tdDescripcion.textContent = `${informacionTable[sub].descripcion}`;
 }
 
 function mostrar_destacado(sub) {
-    let elementosImportantes = `  
-    <tr>
-        <td class="es-importante">${informacionTable[sub].titulo}</td>
-        <td class="es-importante">${informacionTable[sub].subtitulo}</td>
-        <td class="es-importante">${informacionTable[sub].descripcion}</td>
-    </tr>
-    `;
-    containerTable.innerHTML += elementosImportantes;
+    let tr = document.createElement("tr");
+    let tdTitulo = document.createElement("td");
+    let tdSubtitulo = document.createElement("td");
+    let tdDescripcion = document.createElement("td");
+    containerTable.appendChild(tr);
+    tr.append(tdTitulo, tdSubtitulo, tdDescripcion);
+    tdTitulo.textContent = `${informacionTable[sub].titulo}`;
+    tdSubtitulo.textContent = `${informacionTable[sub].subtitulo}`;
+    tdDescripcion.textContent = `${informacionTable[sub].descripcion}`;
+    tdTitulo.classList.add("es-importante");
+    tdSubtitulo.classList.add("es-importante");
+    tdDescripcion.classList.add("es-importante");
 }
 function mostrarInformacion() {
     for (let j = 0; j < informacionTable.length; j++) {
