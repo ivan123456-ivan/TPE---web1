@@ -3,8 +3,9 @@
 const min = 999;
 const max = 9999;
 
+let form = document.querySelector("#form-captcha");
+let inputCaptcha = document.querySelector("#numero-usuario");
 let textCaptcha = document.querySelector("#aleatorio");
-let input = document.querySelector("#numero-usuario");
 let btnCaptcha = document.querySelector("#submit");
 let icon = document.querySelector("#icon-verif");
 let btnContacto = document.querySelector("#btn-contacto");
@@ -20,17 +21,19 @@ checking();
 
 function crear_captcha() {
     ramdon = Math.floor(Math.random() * (max - min) + min + 1);
-    textCaptcha.innerHTML = ramdon;
+    textCaptcha.textContent = ramdon;
 }
 
 function checking() {
-    if (input.value === "") {
+    let formData = new FormData(form);
+    let numeroUsuario = formData.get("numero-usuario");
+    if (numeroUsuario.trim() === "") {
         icon.classList.add("bi-shield-lock-fill");
         icon.classList.remove("captcha-ok", "captcha-fail");
         btnContacto.classList.add("ocultar");
         warning.classList.remove("ocultar");
         crear_captcha();
-    } else if (ramdon == input.value) {
+    } else if (ramdon === parseInt(numeroUsuario)) {
         icon.classList.remove(
             "bi-shield-lock-fill",
             "bi-shield-fill-x",
@@ -39,7 +42,7 @@ function checking() {
         icon.classList.add("bi-shield-fill-check", "captcha-ok", "efect-ok");
         btnContacto.classList.remove("ocultar");
         warning.classList.add("ocultar");
-        input.classList.add("ocultar");
+        inputCaptcha.classList.add("ocultar");
         btnCaptcha.classList.add("ocultar");
         heading.classList.add("ocultar");
         textCaptcha.classList.add("ocultar");

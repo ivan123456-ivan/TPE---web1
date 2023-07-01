@@ -1,138 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Diario + contacto</title>
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
 
-    <body id="body">
-        <header>
-            <i class="bi bi-list btn" id="btn-nav"></i>
-            <div class="logo">
-                <h1>El Diario +</h1>
-            </div>
-            <div>
-                <p class="eslogan">tu portal de noticias.</p>
-            </div>
-            <div class="escarapela-container">
-                <div class="escarapela-capa-1">
-                    <div class="escarapela-capa-2">
-                        <div class="escarapela-capa-3"></div>
-                    </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diario + contacto</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body id="body">
+    <header>
+        <i class="bi bi-list btn" id="btn-nav"></i>
+        <div class="logo">
+            <h1>El Diario +</h1>
+        </div>
+        <div>
+            <p class="eslogan">tu portal de noticias.</p>
+        </div>
+        <div class="escarapela-container">
+            <div class="escarapela-capa-1">
+                <div class="escarapela-capa-2">
+                    <div class="escarapela-capa-3"></div>
                 </div>
             </div>
-            <nav>
-                <ul class="nav">
-                    <li type="menu" class="btn-header">
-                        <a href="index.html">Home<i class="bi bi-house"> </i></a>
-                    </li>
-                    <li type="menu" class="btn-header">
-                        <a href="ultimas-noticias.html">Ultimas Noticias
-                            <i class="bi bi-exclamation-diamond"> </i></a>
-                    </li>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li type="menu" class="btn-header">
+                    <a href="index.html">Home<i class="bi bi-house"> </i></a>
+                </li>
+                <li type="menu" class="btn-header">
+                    <a href="ultimas-noticias.html">Ultimas Noticias
+                        <i class="bi bi-exclamation-diamond"> </i></a>
+                </li>
 
-                    <li type="menu" class="btn-header">
-                        <a href="categorias.html">Categorías <i
-                                class="bi bi-bookmark"> </i></a>
-                    </li>
-                    <li type="menu" class="btn-header">
-                        <a href="crear-tabla-noticia.html">Idea de noticia
-                            <i class="bi bi-lightbulb"> </i></a>
-                    </li>
-                    <li type="menu" class="btn-header">
-                        <a href="contacto.html">Contacto <i
-                                class="bi bi-telephone"> </i></a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+                <li type="menu" class="btn-header">
+                    <a href="categorias.html">Categorías <i class="bi bi-bookmark"> </i></a>
+                </li>
+                <li type="menu" class="btn-header">
+                    <a href="crear-tabla-noticia.html">Idea de noticia
+                        <i class="bi bi-lightbulb"> </i></a>
+                </li>
+                <li type="menu" class="btn-header">
+                    <a href="contacto.html">Contacto <i class="bi bi-telephone"> </i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <ul class="container-redes">
-            <li class="redes">
-                <a href="#"><i class="bi bi-twitch"></i></a>
-            </li>
-            <li class="redes">
-                <a href="#"><i class="bi bi-twitter"></i></a>
-            </li>
-            <li class="redes">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-            </li>
-            <li class="redes">
-                <a href="#"><i class="bi bi-messenger"></i></a>
-            </li>
-            <li class="redes">
-                <a
-                    href="https://api.whatsapp.com/send?phone=2494696975"
-                    target="_blank"><i class="bi bi-whatsapp"></i></a>
-            </li>
-        </ul>
-        <div class="main">
-            <div class="container-contact" id="contact">
-                <form class="contact-form" action method="get">
-                    <label for="nombre">Nombre y Apellido</label>
-                    <input
-                        id="nombre"
-                        class="contact-input"
-                        type="text"
-                        required />
-                    <label for="email">Email</label>
-                    <input
-                        id="email"
-                        class="contact-input"
-                        type="email"
-                        required />
-                    <label for="mensaje">Mensaje</label>
-                    <textarea
-                        class="mensaje-contacto"
-                        name="mensaje"
-                        id="mensaje"
-                        cols="30"
-                        rows="10"
-                        required></textarea>
-                    <div id="container-captcha">
-                        <div class="form">
-                            <i
-                                class="check bi bi-shield-lock-fill"
-                                id="icon-verif"></i>
-                            <p id="heading" class="heading">
-                                Ingrese la clave aleatoria:
-                                <span id="aleatorio"></span>
-                            </p>
-                            <div class="box">
-                                <input
-                                    class="contact-input"
-                                    type="text"
-                                    id="numero-usuario"
-                                    maxlength="4"
-                                    autocomplete="off"
-                                    required />
-                            </div>
-                            <div class="buttons">
-                                <button type="button" class="btn1" id="submit">
-                                    Comprobar
-                                </button>
-                            </div>
+    <ul class="container-redes">
+        <li class="redes">
+            <a href="#"><i class="bi bi-twitch"></i></a>
+        </li>
+        <li class="redes">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+        </li>
+        <li class="redes">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+        </li>
+        <li class="redes">
+            <a href="#"><i class="bi bi-messenger"></i></a>
+        </li>
+        <li class="redes">
+            <a href="https://api.whatsapp.com/send?phone=2494696975" target="_blank"><i class="bi bi-whatsapp"></i></a>
+        </li>
+    </ul>
+    <div class="main">
+        <div class="container-contact" id="contact">
+            <form class="contact-form" id="form-captcha" action method="get">
+                <label for="nombre">Nombre y Apellido</label>
+                <input id="nombre" class="contact-input" type="text" required />
+                <label for="email">Email</label>
+                <input id="email" class="contact-input" type="email" required />
+                <label for="mensaje">Mensaje</label>
+                <textarea class="mensaje-contacto" name="mensaje" id="mensaje" cols="30" rows="10" required></textarea>
+                <div id="container-captcha">
+                    <div class="form">
+                        <i class="check bi bi-shield-lock-fill" id="icon-verif"></i>
+                        <p id="heading" class="heading">
+                            Ingrese la clave aleatoria:
+                            <span id="aleatorio"></span>
+                        </p>
+                        <div class="box">
+                            <input class="contact-input" type="text" id="numero-usuario" name="numero-usuario"
+                                maxlength="4" autocomplete="off" required />
+                        </div>
+                        <div class="buttons">
+                            <button type="button" class="btn1" id="submit">
+                                Comprobar
+                            </button>
                         </div>
                     </div>
-                    <p id="warning" class="ocultar">
-                        Por favor complete el captcha.
-                    </p>
-                    <button class="btn1" id="btn-contacto" type="submit">
-                        Enviar
-                    </button>
-                </form>
-            </div>
+                </div>
+                <p id="warning" class="ocultar">
+                    Por favor complete el captcha.
+                </p>
+                <button class="btn1" id="btn-contacto" type="submit">
+                    Enviar
+                </button>
+            </form>
         </div>
+    </div>
 
-        <footer class="division footer">
-            <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
-        </footer>
+    <footer class="division footer">
+        <h4><span class="resaltado">El Diario +</span> Copyright ©2023</h4>
+    </footer>
 
-        <script src="js/captcha.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+    <script src="js/captcha.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
