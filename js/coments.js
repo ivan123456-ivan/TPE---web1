@@ -1,10 +1,9 @@
 "use strict";
-let inputs = document.querySelectorAll("input");
-let textArea = document.querySelectorAll("textarea");
-let btn = document.querySelector(".btn1");
+let textArea = document.querySelector("textarea");
 let container = document.querySelector(".coments-container");
 let advertencia = document.querySelector("#advertencia");
-textArea[0].value = "";
+let form = document.querySelector(".contact-form");
+textArea.value = "";
 let fecha = new Date();
 let hora = fecha.getHours();
 let minutos = fecha.getMinutes();
@@ -18,33 +17,37 @@ let coments = [
     },
 ];
 
-mostrar_comentario(0);
+mostrar_comentario();
 
-btn.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
     e.preventDefault();
+    let formData = new FormData(form);
+    let nombre = formData.get("nombre");
+    let email = formData.get("email");
+    let comentario = formData.get("comentarios");
     if (
-        inputs[0].value != "" &&
-        inputs[1].value != "" &&
-        textArea[0].value != ""
+        nombre.trim() !== "" &&
+        email.trim() !== "" &&
+        comentario.trim() !== ""
     ) {
         let fechaUser = new Date();
         let horaUser = fechaUser.getHours();
         let minutosUser = fechaUser.getMinutes();
 
-        container.innerHTML = "";
+        container.textContent = "";
         let nuevoComentario = {
-            nombre: inputs[0].value,
-            email: inputs[1].value,
-            comentario: textArea[0].value,
+            nombre: nombre,
+            email: email,
+            comentario: comentario,
             time: [horaUser, minutosUser],
         };
         coments.push(nuevoComentario);
-        for (let j = 0; j < coments.length; j++) {
-            mostrar_comentario(j);
-        }
-        inputs[0].value = "";
-        inputs[1].value = "";
-        textArea[0].value = "";
+        advertencia.classList.remove("ocultar");
+        advertencia.textContent = "Comentario registrado correctamente!";
+        setTimeout(() => {
+            advertencia.classList.add("ocultar");
+        }, 8000);
+        mostrar_comentario();
         advertencia.classList.add("ocultar");
     } else {
         advertencia.classList.remove("ocultar");
@@ -54,20 +57,38 @@ btn.addEventListener("click", (e) => {
     }
 });
 
-function mostrar_comentario(sub) {
-    let comentario = `
-        <article class="coment">
-            <div class="coment-header">
-              <img src="../img/comentarioDefault.png">
-              <p><span class="resaltado"> ${coments[sub].nombre}</span> - ${coments[sub].email}</p>
-            </div>
-            <div class="coment-info">
-              <p>${coments[sub].comentario}</p>
-            </div>
-            <div class="coment-footer">
-              <time>Comentó a las ${coments[sub].time[0]}:${coments[sub].time[1]}</time>
-            </div>
-          </article>
-    `;
-    container.innerHTML += comentario;
+function mostrar_comentario() {
+    container.textContent = "";
+    for (let comentario of coments) {
+        let article = document.createElement("article");
+        let divCommentHeader = document.createElement("div");
+        let pHeader = document.createElement("p");
+        let span = document.createElement("span");
+        let divCommentInfo = document.createElement("div");
+        let pCommentInfo = document.createElement("p");
+        let divCommentFotter = document.createElement("div");
+        let timeCommentFotter = document.createElement("time");
+        let img = document.createElement("img");
+        article.classList.add("coment");
+        divCommentHeader.classList.add("coment-header");
+
+        divCommentInfo.classList.add("coment-info");
+        divCommentFotter.classList.add("coment-footer");
+        span.classList.add("resaltado");
+        container.appendChild(article);
+        article.appendChild(divCommentHeader);
+        divCommentHeader.appendChild(img);
+        img.src = "../img/comentarioDefault.png";
+        divCommentHeader.appendChild(pHeader);
+        span.textContent = `${comentario.nombre}`;
+        pHeader.insertAdjacentElement("beforebegin", span);
+        pHeader.textContent += ` - ${comentario.email}`;
+
+        article.appendChild(divCommentInfo);
+        divCommentInfo.appendChild(pCommentInfo);
+        pCommentInfo.textContent = comentario.comentario;
+        article.appendChild(divCommentFotter);
+        divCommentFotter.appendChild(timeCommentFotter);
+        timeCommentFotter.textContent = `Comentó a las ${comentario.time[0]}:${comentario.time[1]}`;
+    }
 }
