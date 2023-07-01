@@ -88,7 +88,7 @@ function mostrarInformacion() {
         let tdTitulo = document.createElement("td");
         let tdSubtitulo = document.createElement("td");
         let tdDescripcion = document.createElement("td");
-        if (elemento.destacado === true) {
+        if (elemento.destacado) {
             tdTitulo.classList.add("es-importante");
             tdSubtitulo.classList.add("es-importante");
             tdDescripcion.classList.add("es-importante");
