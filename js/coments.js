@@ -81,8 +81,8 @@ function mostrar_comentario() {
         img.src = "../img/comentarioDefault.png";
         divCommentHeader.appendChild(pHeader);
         span.textContent = `${comentario.nombre}`;
-        pHeader.insertAdjacentElement("beforebegin", span);
-        pHeader.textContent += ` - ${comentario.email}`;
+        pHeader.append(span, ` - ${comentario.email}`);
+
 
         article.appendChild(divCommentInfo);
         divCommentInfo.appendChild(pCommentInfo);
