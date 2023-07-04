@@ -48,8 +48,8 @@ form.addEventListener("submit", (e) => {
             advertencia.classList.add("ocultar");
         }, 8000);
         mostrar_comentario();
-        advertencia.classList.add("ocultar");
     } else {
+        advertencia.textContent = "Debe completar todos los campos!";
         advertencia.classList.remove("ocultar");
         setTimeout(() => {
             advertencia.classList.add("ocultar");
@@ -82,7 +82,6 @@ function mostrar_comentario() {
         divCommentHeader.appendChild(pHeader);
         span.textContent = `${comentario.nombre}`;
         pHeader.append(span, ` - ${comentario.email}`);
-
 
         article.appendChild(divCommentInfo);
         divCommentInfo.appendChild(pCommentInfo);
